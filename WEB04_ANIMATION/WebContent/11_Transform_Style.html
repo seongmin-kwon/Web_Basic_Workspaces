@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11_Transform_Style.html</title>
+    <style type="text/css">
+        div {width:200px; height:200px;}
+        .container{
+            border:1px solid black;
+            perspective: 300px;
+            margin-top: 100px;
+            margin-left:100px;
+            float:left;
+                }
+        .box1 {background:#82cbd8; }
+        .box2 {background:black; transform-origin: left top;}
+        #tr-style1{
+            transform-style:flat; transition:2s;
+        }
+         #tr-style2{
+            transform-style:preserve-3d; transition:2s;
+        }
+        .box1:hover{transform: rotateY(45deg);}
+        .box2:hover{transform: rotateX(45deg);}
+/*이중의 3d효과를 줄려면 겹쳐진상태에서 두번 펄스펙티브주면 찌그러지니 tr-style1"를이용하자.*/
+/*x,y 로테이션에도 오리진이존재 한다.*/
+/*  두박스에서 왼쪽건 펄스펙티브로 적용한이상한 3d회전이고 오른쪽게 :preserve-3d를이용한 것이다. */
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1" id="tr-style1">
+            <div class="box2"></div>
+        </div>
+    </div>
+ <div class="container">
+        <div class="box1" id="tr-style2">
+            <div class="box2"></div>
+        </div>
+    </div>
+
+</body>
+</html>

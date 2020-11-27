@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>로테이트</title>
+	<style type="text/css">
+		body{background-color:black; margin: 0 auto; text-align: center; color: white;font-family:"Georgia",serif;}
+		#content{
+			position: relative;
+			margin: 0 auto;
+			width: 50%;
+			height: 100%;
+			margin-top: 200px;
+			border:1px solid white;
+			
+		}
+	
+		
+		#readMore{
+			width: 7%;
+			height: 50%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-right: 1px;
+			padding-left: 5px;
+			margin: 0 auto;
+			border: 1px solid white;
+			border-radius: 40% 60% 65% 35%/ 40% 45% 55% 60%;
+		}
+		   .double_border0{
+				position: absolute;
+			    left:200px;
+				margin: 0 auto;
+				width: inherit;
+				height: inherit;
+				border:1px solid white;
+				border-radius: 40% 60% 65% 35%/ 40% 45% 55% 60%;}
+		.double_border1{
+				position: absolute;
+			    left:200px;
+				margin: 0 auto;
+				width: inherit;
+				height: inherit;
+				border:1px solid white;
+				border-radius: 40% 60% 35% 65%/ 40% 45% 60% 40%;}
+		.double_border2{
+				position: absolute;
+			    left:200px;
+				margin: 0 auto;
+				width: inherit;
+				height: inherit;
+				border:1px solid white;
+				border-radius: 60% 40% 35% 65%/ 40% 40% 60% 45%;}
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		d+=50;
+		$(function(){
+			setInterval(function(){
+				$('double_border0').css({"transform","rotate:+deg"},1000);
+			},2000);
+         
+        });
+       });      
+
+	</script>
+</head>
+<body>
+
+<div id="content">
+<div class="double_border0"></div>
+<div class="double_border1"></div>
+<div class="double_border2"></div>
+	<h1>Heading</h1>
+	<div><p>learn ipsum dolor sit amet<br>consecleulur adjusting eilt Atiquam<br>progression sunt at laborum fuglt<br>perferendis odit itum facilas <br>querat</p></div>
+	<div id="readMore"><span>Read More</span></div>
+</div>
+
+
+</body>
+</html>

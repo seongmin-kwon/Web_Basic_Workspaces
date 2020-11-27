@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>15_Image_Control_01.html</title>
+<style type="text/css">
+#a1{position:absolute; width:170px; height:255px; border:2px solid black; top:100px; left:100px;}
+</style>
+
+<script type="text/javascript">
+    var aa=0;
+    function rotate_div(){
+    aa += 20;
+    if(aa>360) aa = 20;
+    document.getElementById('a1').style.webkitTransform = 'rotate(' + aa + 'deg)';
+    }
+    function init(){
+        setInterval( "rotate_div()" , 100)
+    }
+</script>
+</head>
+<body   onload="init();">
+<div id='a1'>
+ <img src="images/1.jpg">                          
+</div>   
+</body>
+</html>

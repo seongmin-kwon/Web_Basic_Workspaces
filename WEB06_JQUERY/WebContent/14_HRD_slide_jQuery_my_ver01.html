@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>14_HRD_ex.html</title>
+<style type="text/css">
+     #layer1{position:relative; width:100%; height:145px; border:1px dashed gray;}
+    .view1{position:relative; width:1025px; height:115px; border:1px solid red; margin:0 auto; overflow: hidden;}
+
+    .view2{position:relative; width:1025px; height:30px; border:1px dotted blue; margin:0 auto;}
+
+    #imgs{position:absolute; left:0; top:0; width:9225px; border:1px solid green; height:115px;}
+
+    
+
+    .remote{position:relative; width:240px; height:20px; border:1px dotted blue; float:right; margin-top:4px;}
+
+    
+
+    .bnum,.btns{position:relative; width:18px; height:18px; border:1px solid black; float:left; font-size:90%; font-weight:bold; line-height:18px; text-align:center; cursor: default;}
+
+</style>
+
+<script src="js/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    var imgs_tag = '';
+
+    var remote_tag = '';
+
+    var banners = ['images/H1.png', 'images/H2.png', 'images/H3.png', 'images/H4.png', 'images/H5.png', 'images/H6.png', 'images/H7.png', 'images/H8.png', 'images/H9.png'];
+
+    imgs_tag += '<div id="imgs">'
+
+    for(var i=0; i<=banners.length; i++)
+
+        imgs_tag += '<img src="' + banners[i] + '">'
+
+    imgs_tag += '</div>';
+
+    
+
+    remote_tag = '<div class="btns" id="lbtn">◁</div>'
+
+    for(var i=0; i<banners.length; i++)
+
+        remote_tag += '<div class="bnum">' + (i+1) + '</div>';
+
+    remote_tag += '<div class="btns"  id="rbtn">▷</div>'
+
+    remote_tag += '<div class="btns"  id="abtn">▶</div>'
+
+    
+
+    var automode = 0
+
+    var num = 0;
+
+    $(function(){
+
+        $(imgs_tag).appendTo('.view1');
+
+        $(remote_tag).appendTo('.remote');
+
+        
+
+        $('.bnum').click(function(){
+
+            if(automode == 1) return; 
+
+            num = $('.bnum').index(this);
+
+            var k = -1*num*1025;
+
+            // $('.bnum').index(this)   .bnum 중에서 몇번째?
+
+            // $(this).index()   부모요소를 기준으로 몇번째?
+
+            $('#imgs').animate({left:k}, 500);
+
+        });
+
+        
+
+        $('#lbtn').click(function(){
+
+            num--;
+
+            if(num<0)num=0;
+
+            var k = -1*num*1025;
+
+            $('#imgs').animate({left:k}, 500);
+
+        });
+
+        $('#rbtn').click(function(){
+
+            num++;
+
+            if(num>8)num=8;
+
+            var k = -1*num*1025;
+
+            $('#imgs').animate({left:k}, 500);
+
+        });
+
+        $('#abtn').click(function(){
+
+            if(automode==0){
+
+                timer = setInterval(function(){
+
+                num++;
+
+                if(num>8)num=0;
+
+                var k = -1*num*1025;
+
+                $('#imgs').animate({left:k}, 500);
+
+                }, 1000);
+
+                $(this).text('■');
+
+                automode=1;
+
+            }else{
+
+                window.clearInterval(timer);
+
+                $(this).text('▶');
+
+                automode=0;
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</head>
+
+<body>
+
+<div id="layer1">
+
+    <div class="view1"></div>
+
+    <div class="view2">
+
+        <div class="remote">
+
+  </div>
+
+    </div>
+
+</div>       
+
+</body>
+
+</html>

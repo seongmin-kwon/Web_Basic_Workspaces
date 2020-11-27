@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image04_Control_04.html</title>
+    <style type="text/css">
+         #base{position: relative; width: 170px; height: 255px; border: 1px solid blue; overflow: hidden;}
+        .imgs{position:absolute;top:0;left:0;opacity:0;transition:1s;}
+        #view{opacity:1;}
+    </style>
+    <script type="text/javascript">
+        var num=0;
+        function startRoll(){
+            setInterval("Roll()",1000);
+        }
+        function Roll(){
+            num++;
+            if(num>5)num=1;
+            
+            for(var i=1; i<=5;i++){
+                var s="view"+ i;
+                if(i==num) {
+                    /*매번 실행시 투명도를 1 ,0으로 설정해 블러 효과 가능*/
+                    document.getElementById(s).style.opacity='1';
+                    
+                }else{
+                    document.getElementById(s).style.opacity='0';
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body onload="startRoll();">
+<div id="base">
+    <div class="imgs" id="view1"><img src="images/1.jpg"></div>
+    <div class="imgs"  id="view2"><img  src="images/2.jpg"></div>
+    <div class="imgs"  id="view3"><img src="images/3.jpg"></div> 
+    <div class="imgs"  id="view4"><img  src="images/4.jpg"></div> 
+    <div class="imgs"  id="view5"><img  src="images/5.jpg"></div>
+ </div>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    body{margin:0px;}
+    #base{
+        position:relative;
+        width:250px;
+        height:1000px;
+        background:#595959;
+        box-shadow:1px 1px 5px 2px #888888
+    }
+    #top{
+        width:100%;
+        height:200px;
+        border:1px dashed white;
+    }
+    #menu1{
+        width:250px;
+        height:39px;
+        background-image: url(images/11.jpg);
+        transition-duration:0.5s;
+    }
+    #menu1:hover{ 
+        background-image:url(images/111.jpg);
+    }
+    #sub1
+    {
+        width:250px;
+        height:0px;
+        background-image: url(images/sub1.jpg);
+        transition-duration:0.5s;
+    }
+    #menu1:hover+#sub1{
+        height:160px;
+    }
+   
+    #menu2{width:250px; height:39px; background-image: url(images/22.jpg); transition-duration:0.5s;}
+    #menu2:hover{ background-image:url(images/222.jpg);}
+    #sub2{width:250px; height:0px; background-image: url(images/sub1.jpg); transition-duration:0.5s;}
+    #menu2:hover+#sub2{height:160px;}
+   
+    #menu3{width:250px; height:39px; background-image: url(images/33.jpg); transition-duration:0.5s;}
+    #menu3:hover{ background-image:url(images/333.jpg);}
+    #sub3{width:250px; height:0px; background-image: url(images/sub1.jpg); transition-duration:0.5s;}
+    #menu3:hover+#sub3{height:160px;}
+   
+    #menu4{width:250px; height:39px; background-image: url(images/44.jpg); transition-duration:0.5s;}
+    #menu4:hover{ background-image:url(images/444.jpg);}
+    #sub4{width:250px; height:0px; background-image: url(images/sub1.jpg); transition-duration:0.5s;}
+    #menu4:hover+#sub4{height:160px;}
+   
+    #menu5{width:250px; height:39px; background-image: url(images/55.jpg); transition-duration:0.5s;}
+    #menu5:hover{ background-image:url(images/555.jpg);}
+    #sub5{width:250px; height:0px; background-image: url(images/sub1.jpg); transition-duration:0.5s;}
+    #menu5:hover+#sub5{height:160px;}
+</style>
+</head>
+<body>
+<div id="base">
+    <div id="top"></div>
+    <div id="menu1"></div>
+    <div id="sub1"></div>
+    <div id="menu2"></div>
+    <div id="sub2"></div>
+    <div id="menu3"></div>
+    <div id="sub3"></div>
+    <div id="menu4"></div>
+    <div id="sub4"></div>
+    <div id="menu5"></div>
+    <div id="sub5"></div>
+</div>   
+</body>
+</html>

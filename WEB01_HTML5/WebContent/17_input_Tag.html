@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input Type Tag</title>
+</head>
+<body>
+<form action="14_Table_01.html">
+ 아이디 : <input type="text" name = "id"/><hr /> <!-- 글자를 입력 받을 수 있는 입력란 -->
+ PASSWORD : <input type="password" name="pw"/><hr />
+ <!-- 비밀번호 입력 양식 생성-->
+ 첫째<input type="checkbox"  value="first" name="ch"/>
+ 둘째<input type="checkbox"  value="second"  name="ch"/>
+ 셋째<input type="checkbox"  value="third"  name="ch"/><hr />
+ <!-- 체크 박스 생성 -->
+ <!-- 첫째 둘째 셋째 는 화면 표시되는 단어들이고, value 값들은 서버에 전달되는 값들입니다 -->
+ 남자<input type="radio" name="gender" value="m"/>
+ 여자<input type="radio"  name="gender" value="f"/><hr />
+ <!-- 라디오 버튼 생성 -->
+ <select name="dkts">
+   <option value="1">김밥</option>
+   <option value="2">떡뽁이</option>
+   <option value="3">튀김</option>
+   <option value="4">순대</option>
+ </select><hr /><!-- 펼침 목록 -->
+ 파일<input type="file" name="selectfile"/><hr /> <!-- 파일 입력 양식 생성 -->
+ <input type="button" value="클릭" /><hr /> <!-- 버튼 생성 -->
+ <input type="submit" value="작성완료" />
+ <input type="reset" value="다시작성" /><hr /><!-- 전송 및 취소 버튼 생성 -->
+ <!-- submit 과 reset 버튼은 form 과 함께 사용되는 버튼으로  name 값이 생략되곤 합니다 -->
+ <input type="hidden" name="loginuser" value="홍길동"/><hr />
+ <!-- 보이지 않는 입력  양식 생성 -->
+ <textarea cols="50" rows="10"></textarea><hr /><!-- 멀티라인 텍스입력 란 -->
+ 주소 : <input type="text" size="50" placeholder="주소입력"/><hr />
+ <!-- 입력 내용 안내  placeholder는 클릭하고 내용을 입력하면 지워지는 안내문구 -->
+</form>
+</body>
+</html>

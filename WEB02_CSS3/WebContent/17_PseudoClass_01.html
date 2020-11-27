@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+    일반 구조선택자
+    -CSS3부터 지원하는 선택자
+    -일반적으로 자손선택자와 병행해서 많이 사용
+    -종류:
+    1.first-child: 첫번째 위치하는 자손을 선택
+    2.last-child:마지막에 위치하는 자손을 선택
+    3.nth-child(n):n번째 위치하는 자손을 선택
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        ul{list-style:none; padding:0px;}
+        ul li{float:left;
+            padding:15px;
+            text-align:center;
+            border:10px solid blue;
+            width=100px;
+        }
+/*
+        ul li:nth-child(1){background: orange;}
+        ul li:nth-child(3){background: orange;}
+        ul li:nth-child(5){background: red;}
+        ul li:nth-child(2){background: orange;}
+        ul li:nth-child(4){background: orange;}
+        ul li:nth-child(6){background: orange;}
+*/
+/*   짝수번째 홀수번째 지목하는 스마트한방법  n=0번부터 시작   */
+             ul li:nth-child(2n){background: orange;}
+            ul li:nth-child(2n+1){background: pink;}
+        ul li:first-child{border-radius: 20px 0 0 20px;}
+        ul li:last-child{border-radius: 0px 20px 20px 0px;}
+        /*순서대 로 왼 위로 아래 바닥 이다.*/
+        
+    </style>
+</head>
+<body>
+   <ul>
+       <li>first</li>
+       <li>second</li>
+       <li>third</li>
+       <li>fourth</li>
+       <li>fifth</li>
+       <li>sixth</li>
+       
+   </ul>
+    
+</body>
+</html>

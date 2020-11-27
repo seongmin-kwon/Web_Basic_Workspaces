@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #layer1{position: relative; width: 100%; height: 145px; border: 1px dashed gray;}
+        .view1{position: relative; width: 1025px; height: 115px; border:1px solid red; margin:0 auto; overflow: hidden; }
+        .view2{position: relative; width: 1025px; height: 30px; border:1px dotted blue; margin:0 auto;}
+        
+         #imgs{position: absolute; width: 9225px; height: 115px; border:1px solid blue; top:0px; left:0px; transition: 0.5s;}
+        
+        .remote{position: relative; width: 240px; height: 20px; border: 1px dotted blue; float: right; margin-top: 4px;}
+        
+        .btns{position: relative;width: 18px; 18px; border: 1px solid black; float: left; font-size: 90%; font-weight: bold; line-height: 18px; text-align: center;}
+        
+        .btns:hover{cursor: default; }
+        
+        
+        body{/*overflow-x: hidden;*/}
+    </style>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        var auto = 'on'; /* 버튼의 온오프 변수를 만들어줌 */
+        var num=0; /* 몇번째사진인지에 대한 변수 */
+        var img = ['images/H1.png','images/H2.png','images/H3.png','images/H4.png','images/H5.png','images/H6.png','images/H7.png','images/H8.png','images/H9.png',]; /*배너 이미지 */
+        var s='';   /* 이미지를 바디에 넣어줄 변수 생성 */
+        var btn='<div class="btns" id="btnleft">◁</div><div class="btns" id="btn1">1</div><div class="btns" id="btn2">2</div><div class="btns" id="btn3">3</div><div class="btns" id="btn4">4</div><div class="btns" id="btn5">5</div><div class="btns" id="btn6">6</div><div class="btns" id="btn7">7</div><div class="btns" id="btn8">8</div><div class="btns" id="btn9">9</div><div class="btns" id="btnright">▷</div><div class="btns" id="btnA">ll</div>'; /* 하단 버튼 */
+        for(var i=0; i<9; i++){
+          s +='<img src="'+img[i]+'">'; /* 이미지 반복문 */
+        }
+        $(function(){
+           $(s).appendTo('#imgs');  /* 이미지 아이디에 s를 넣어준다 */
+           $(btn).appendTo('.remote'); /* 리모트 클래스에 btn을 넣어준다 */
+           $('#btn1').css({background:"black",color:"white"}); /* 첫 페이지에서 버튼 색상 */    
+           timer=setInterval(function(){ 
+               /* 버튼이 돌아가는 반복을 하기 위해 timer라는 변수를 만들어줌  */ 
+             $('.btns').css({background:"white",color:"black"});  
+             num++;
+             if(num==9){
+                 num=0;
+             }   
+             var move=(-1*1025)*num;   
+             $('#imgs').css("left",move);
+             $('#btn'+(num+1)).css({background:"black",color:"white"});   
+           },1000);
+            $('#btnA').click(function(){
+               if(auto=='on'){
+                  auto='off';
+                   window.clearInterval(timer);
+                   $('#btnA').text('■');
+               }else{
+                 auto='on';
+                 $('#btnA').text('▶');
+                 timer=setInterval(function(){
+                $('.btns').css({background:"white",color:"black"});  
+                num++;
+                if(num==9){
+                 num=0;
+                }     
+                var move=(-1*1025)*num;   
+                $('#imgs').css("left",move);
+                $('#btn'+(num+1)).css({background:"black",color:"white"});   
+                },500);  
+               } 
+            });
+            $('#btnleft').click(function(){
+                auto='off';
+                window.clearInterval(timer);
+                $('#btnA').text('■');
+               $('.btns').css({background:"white",color:"black"});    
+               num--;
+                if(num==-1){
+                    num=8;
+                }
+               var lmove =(-1*1025)*num;
+               $('#imgs').css("left",lmove);
+               $('#btn'+(num+1)).css({background:"black",color:"white"});
+            });
+            $('#btnright').click(function(){
+                auto='off';
+                window.clearInterval(timer);
+                $('#btnA').text('■');
+               $('.btns').css({background:"white",color:"black"});    
+               num++;
+                if(num==9){
+                    num=0;
+                }
+               var lmove =(-1*1025)*num;
+               $('#imgs').css("left",lmove);
+               $('#btn'+(num+1)).css({background:"black",color:"white"});
+            });
+            $('.btns').click(function(){
+                var bun = $(this).index();
+                if(bun==0||bun==10||bun==11){
+                    return;
+                }
+                $('.btns').css({background:"white",color:"black"});
+                auto='off';
+                window.clearInterval(timer);
+                $('#btnA').text('■');
+                num=(bun-1);
+                move =(-1*1025)*num;
+               $('#imgs').css("left",move);
+               $('#btn'+(num+1)).css({background:"black",color:"white"});
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="layer1">
+    <div class="view1">
+        <div id="imgs">
+        </div>
+    </div>
+    <div class="view2">
+        <div class="remote">
+        </div>
+    </div>
+</div>  
+</body>
+</html>

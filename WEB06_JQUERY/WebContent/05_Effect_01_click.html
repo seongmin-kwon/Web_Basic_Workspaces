@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리의 꽃 이펙트!!효과</title>
+     <style type="text/css">
+         span{font-size: 180%; font-weight: bold; display: none;}
+    </style>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        //중요!!!!!! 내가원하는 태그를 선택하는것이능력 버튼 태그중 eq(0) 0번째 만선택
+        $(function(){
+            $('button:eq(0)').click(function(){
+                $('span:first'). show();
+            });    //0번버튼을 클릭하면! 스판태그는 2개이니 퍼스트 라스트 로 지목가능하지. 그해당 스판값 보여줘
+            
+            $('button:eq(1)').click(function(){
+                $('span:first'). hide();// 1번 클릭시 숨기기
+            }); 
+          /*   $('button:eq(2)').click(function(){
+                $('span:last'). show('slow');
+            }); 
+            $('button:eq(3)').click(function(){
+                $('span:last'). hide('slow');
+            }); */
+            $('button:eq(2)').click(function(){
+                $('span:last'). show(2000,function(){});
+                $(this).css('background','yellow');
+            }); 
+            $('button:eq(3)').click(function(){
+                $('span:last'). hide(2000);
+            }); 
+        });
+        
+    </script>
+</head>
+<body>
+    <button>Show It</button> <!--버튼을 만드는 또 다른 방법-->
+    <button>Hide It</button>
+    <span>안녕하세요.</span>
+    <br>
+    <button>Show It slow</button>
+    <button>Hide It slow</button>
+    <span>반갑습니다.</span>
+</body>
+</html>

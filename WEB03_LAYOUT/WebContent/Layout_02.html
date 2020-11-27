@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body{overflow-x:hidden;}
+/*오른쪽 공백을 없애는 방법: 크게만들어서 가운데 위치시켜 스크롤 안보이게 하기.         */
+        #base{position:relative; height:500px; width:120%; left:-10%; top:100px; background:#EEEEEE}
+       
+        #box3{ position:absolute; left:50%; background:#FFDE05; height:400px; width:50%; top:50px;}
+       
+        #box1{ position:absolute; right:51%; top:50px;}
+        #box2{ position:absolute; right:67%; top:50px;}
+       
+        .box12{height:400px; width:15%; background:#EEF1F1;
+   box-shadow:3px 3px 3px 3px gray;}
+    </style>
+</head>
+<body>
+<div id="base">
+    <div id="box1" class="box12"></div>
+ <div id="box2" class="box12"></div>
+ <div id="box3"></div>
+</div>   
+</body>
+</html>

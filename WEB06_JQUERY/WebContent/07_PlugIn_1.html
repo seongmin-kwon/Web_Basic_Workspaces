@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>플러그인</title>
+<style type="text/css">
+    *{ margin: 0px; padding:0px;}
+    ul{list-style:none;}
+    img{width:500px; height: 350px;}
+</style>
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/jquery.innerfade.js"></script>
+<script type="text/javascript">
+    
+// 이전 실습들에서 복잡하게 구현했던기능들이 플러그 인을 통해서 보다 간단하게 구현 할 수 있다!
+//플러그인이란 본프로그램에 덧붙힐 수 있는프로그램 마치 이클립스의 emaster같은 놈을 플러그인이라한다. 제이쿼리 이외의 기능이 아니라 있는기능에 추가로 사용 ~js 로 내가 저장한 기능을 필요할때 마다 쓰겠단 개념 제이쿼리 플러그인 
+//실습:jquery.innerfade.js 폴더를 js 폴더에 저장 하고 가져다 사용한다.
+//"<script src="js/jquery.innerfade.js">로 불러온다.
+//사용법만알고 잘 사용하면 된다.
+        $(function(){ //다큐먼트 . ready 의 의미를가진 function
+            $('#inner-fade').innerfade({
+                animationtype:'fade',
+                speed:'fast',
+                timeout:2000,
+                containnerheight:'1em'
+            });//{} 객체로 넣겠단의미
+        });
+</script>
+</head>
+<body>
+<ul id = "inner-fade">
+    <li><img src="images/Desert.jpg"></li>
+    <li><img src="images/Hydrangeas.jpg"></li>
+    <li><img src="images/Chrysanthemum.jpg"></li>
+    <li><img src="images/Koala.jpg"></li>
+    <li><img src="images/Penguins.jpg"></li>
+    <li><img src="images/Tulips.jpg"></li>
+</ul>
+</body>
+</html>

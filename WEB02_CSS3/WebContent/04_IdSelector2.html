@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#header{color: blue; background: red; width:800px; margin:0 auto; }
+/*margin : 좌우 상하 외곽에 위치한 바깥 여백의 크기.  0 auto 값의 의미는
+는 상하는 0, 좌우는 자동으로 브라우져 경계선에 맞춰 내용물을 가운데에 위치하게 하라는 뜻.
+0 auto : 보통 div 태그를 가운데 맞춤할때 많이 사용합니다
+0 auto 값말고 다른 하나의 값을 쓰면 상하좌우 모두 같은 값으로 바깥여백이 설정됩니다.*/
+#wrap {width:800px;margin: 0 auto; height:200px;  overflow:hidden;
+border:5px solid black; color:white;}
+/* border-width:5px; */
+/* border-style:solid; */
+/* border-color:black; */
+/* border:1px solid black : wrap 이라는 div에 외곽선을 1px 실선 검정색으로 표시 */
+/* overflow:hidden; 안쪽 내용물이 가로:800px 세로:200px 경계선을 넘어 갈정도로 크기가 크다면 바깥쪽으로 빠져나가는 부분을 화면에서 보이지 않게 함 깔끔하게 잘라버림 */
+#aside {width:200px;height:300px;background:blue; float:left;}
+#contents{width:600px;height:300px;background:green; float:right;}
+/* float:left; block 형식은 같고 사용되면 바로 줄바꿈이 일어나는 div 에 줄바꿈없이 왼쪽으로 차곡차곡
+쌓이는 배치를 하라는 속성 */
+#footer{width:800px;height:100px;background:silver; margin: 0 auto;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>Header-1</h1>
+  <h3>Header-3</h3>
+</div>
+<div id="wrap">
+  <div id="aside">
+   <h3>Aside(subMenu)</h3>
+  </div>
+  <div id="contents">
+   <h3>Contents</h3>
+  </div>
+</div>
+<div id="footer">
+  <span>footer</span>
+</div>      
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+
+<style type="text/css">
+	body{background-color:cornflowerblue; color: white; font-size: 230%;transition: 2s;}
+	#content{
+		position: relative;
+		margin-top: 250px;
+		margin-left: 50px;
+	}
+</style>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	$(function(){$("#view01").hover(function(){$(this).css("color","gray");},
+							function(){
+			$(this).css("color","white");
+		});
+});
+	$(function(){$("#view02").hover(function(){$(this).css("color","gray");},
+							function(){
+			$(this).css("color","white");
+		});
+});
+	$(function(){$("#view03").hover(function(){$(this).css("color","gray");},
+							function(){
+			$(this).css("color","white");
+		});
+});
+	$(function(){$("#view04").find("#view04").text().hover(function(){$(this).css("color","gray");},
+							function(){
+			$(this).css("color","white");
+		});
+});
+		$(function(){$("#view05").hover(function(){$(this).css("color","gray");},
+							function(){
+			$(this).css("color","white");
+		});
+});
+	
+</script>
+
+</head>
+<body>
+<div id ="content">
+	<div id="view01">New Arrivals</div>
+	<div id="view02">Summer Collection</div>
+	<div id="view03">Winter Collection</div>
+	<div id="view04">Special Offers</div>
+	<div id="view05">Trends</div>
+</div>
+</body>
+</html>

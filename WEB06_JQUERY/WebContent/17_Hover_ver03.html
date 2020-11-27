@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body{font-family: 'Raleway',sans-serif; color: #222; line-height: 1.5em; font-weight: 300; 
+        background-color: royalblue; margin: 0;}  
+        a { color: #222; text-decoration: none;}
+        .gnb{position: absolute; top:50%; transform: translateY(-50%); left: 50px;}
+        .gnb a{display: block; font-size: 40px; margin: 30px 0; color: #fff; transition: 0.5s;}
+        
+    </style>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        
+         $(function(){
+             
+            $('.gnb a').on("mouseover",function(){
+                
+               var k = this;
+                
+                $('.gnb a').each(function() {
+                    if(k!= this) {$(this).css('opacity', '0.2');}
+                });
+                
+                
+              }).on("mouseleave", function() {
+                $('.gnb a').each(function() {
+                $(this).css('opacity', '1');
+                    
+        });
+      });
+    });         
+        
+    </script>
+</head>
+<body>
+    <div class="gnb">
+      <!--a href="#": 아무것도 실행하지 않으며 페이지의 최상단으로 이동한다.-->
+      <!--a href="#none": 아무것도 실행하지 않으며 페이지의 최상단으로 이동하지 않는다.-->
+        <a href="#none">New Arrivals</a>
+        <a href="#none">Summer Collection</a>
+        <a href="#none">Winter Collection</a>
+        <a href="#none">Special Offers</a>
+        <a href="#none">Trends</a>
+    </div>
+    
+</body>
+</html>

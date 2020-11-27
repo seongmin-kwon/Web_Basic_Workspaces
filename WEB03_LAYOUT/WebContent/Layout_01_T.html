@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--position 공부 내용을 참조해서 실습 해보자.  -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Layout_01 실습</title>
+ <style type="text/css">
+ body{margin:0px;}
+ 	.base{position:relative;
+ 		width:100%;
+ 		border:1px dashed black;
+ 		height:500px;
+ 	 	top:100px}
+	.box1{
+		position:aboslute;
+		width:50%;
+		height:500px;
+		background:yellow;
+		top:0px;
+		right:50%;/*엡솔은 right사용가능 오른쪽 경계선위치*/
+    
+    	}
+    .box2{
+    	position:aboslute;
+    	width:50%; 
+    	height:400px;
+        background:orange; 
+        
+       
+        top:50px;
+		left:45%;/*엡솔은left사용가능 왼쪽 경계선위치*/
+       }
+       /*left:왼쪽경계선의 위치, right오른쪽경계썬의 위치top:위쪽경계선의 위치,bottom:아래경계선의 위치
+       	 relative로 둘러싸인 absolute들은 기준 좌표가 자신을 둘러싼 relative의 안쪽의 사각형을 좌표로 사용.
+         */
+        
+   
+    </style>
+</head>
+<body>
+<div class="base">
+<div class="box1">박스1</div>
+<div class="box2">박스2</div>
+</div>
+</body>
+</html>

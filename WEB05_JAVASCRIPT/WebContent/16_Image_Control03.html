@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #base{position: relative; width: 170px; height: 255px; border: 1px solid blue; z-index: 2;
+        /*overflow: hidden*/}
+        #view{position: absolute; width: 900px; height: 255px; left: 0; top:0px; border:1px dashed red; }
+    </style>
+    
+    
+    <script type="text/javascript">
+     function prodx1(x){ 
+       var x = document.getElementById("caption"+x);
+       x.style.webkitTransform='translatex(171px)';
+         if()
+  }
+          function init(){
+            setInterval("prodx1(1)" , 100)
+        }
+    </script>
+</head>
+<body load="init()">
+    <div id="base">
+        <div id="view">
+            <img id=caption1 src="images/6.jpg" onmouseover="prod1(1);" onmouseout="prodx1(1);" >
+            <img id=caption2 src="images/2.jpg" onmouseover="prod1(2);" onmouseout="prodx1(2);">
+            <img id=caption3 src="images/3.jpg" onmouseover="prod1(3);" onmouseout="prodx1(3);">
+            <img id=caption4 src="images/4.jpg" onmouseover="prod1(4);" onmouseout="prodx1(4);">
+            <img id=caption5 src="images/5.jpg" onmouseover="prod1(5);" onmouseout="prodx1(5);">
+        </div>
+    </div>
+</body>
+</html>

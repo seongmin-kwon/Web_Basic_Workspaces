@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>14_Rolling_ImageEx.html</title>
+<script type="text/javascript">
+    var num = 0;  // 전역변수 num
+   
+    function Roll(){
+        num++;
+        if(num>9)num=1;
+        document.getElementById("target").src = "images/" + num + ".jpg";
+    }
+   
+    function startRoll(){
+        timer = window.setInterval( "Roll()"  , 1000 );
+        // 타이머의 종료를 위해서  타이머를 컨트롤할수 잇는 변수에 실행결과값을 저장해줍니다
+    }
+    function stopRoll(){
+        window.clearInterval(timer);
+    }
+</script>
+</head>
+<body onload="startRoll();">
+<img src="images/1.jpg" id="target" onmouseover="stopRoll()" onmouseout="startRoll()">    
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>14_HRD_시험 양식 연습</title>
+<style type="text/css">
+	
+     #Rolling_banner{
+		 position:relative;
+		 width:100%;
+		 height:145px;
+		 border:1px dashed gray;
+	}
+    #banner_view{
+		position:relative;
+		width:1025px; 
+		height:115px;
+		border:1px solid red;
+		margin:0 auto;
+		/*사진을 옆으로 늘리고 banner_view엔 해당 위치의 사진만 보여주자!*/
+		overflow: hidden;
+	}
+    #banner_bottom{
+		position:relative;
+		width:1025px;
+		height:30px;
+		border:1px dotted blue;
+		margin:0 auto;
+	}
+    #imgs{
+		position:absolute;
+		left:0;
+		top:0;
+		width:5125px;
+		border:1px solid green;
+		height:115px;
+		}
+    #controll_buttons{
+		position:relative;
+		width:240px;
+		height:20px;
+		border:1px dotted blue;
+		float:right; 
+		margin-top:4px;
+	}
+
+    .bnum,.btns{position:relative; width:18px; height:18px; border:1px solid black; float:left; font-size:90%; font-weight:bold; line-height:18px; text-align:center; cursor: default;}
+
+</style>
+<!--제이쿼리 라이브러리를 불러옵니다.-->
+<script src="js/jquery-3.5.1.js"></script>
+<!--자바스크립트 부분-->
+<script type="text/javascript">
+/*이미지 태그를 넣을 빈 문자열 변수 선언*/
+    var imgs_tag = '';
+/*이미지 버튼를 넣을 빈 문자열 변수 선언*/
+    var remote_tag = '';
+/*이미지를 banners 배열로 선언 */
+    var banners = ['images/H1.png', 'images/H2.png', 'images/H3.png', 'images/H4.png', 'images/H5.png',];
+/*이미지 태그를 appendTo로 넣을 기위한 태그 문자열을 생성*/
+/*banner_view에 넣을 버튼 을 생성하기위한 반복문*/
+    imgs_tag += '<div id="imgs">'
+    for(var i=0; i<=banners.length; i++)
+        imgs_tag += '<img src="' + banners[i] + '">'
+	//<div id=imgs><img src="images/H1.png"><img src="images/H2.png">...</div>
+	//위 태그 를 형성 하기위한 반복문.
+    imgs_tag += '</div>';
+
+	/*banner_bottom에 넣을 버튼 을 생성하기위한 반복문.*/
+    remote_tag = '<div class="btns" id="lbtn">◁</div>'
+    for(var i=0; i<banners.length; i++)
+        remote_tag += '<div id="btns'+(i+1)+'"' + 'class="bnum">' + (i+1) + '</div>';
+	
+    remote_tag += '<div class="btns"  id="rbtn">▷</div>'
+    remote_tag += '<div class="btns"  id="abtn">▶</div>'
+	
+   /* automode 자동 슬라이드 "on":1 , "off":0 */
+    var automode = 0;
+
+    var num = 0;
+
+    $(function(){
+		
+		//$(문자열 변수).appendTo('타겟 tag'):타겟 tag 태그의 자식으로 문자열이 들어감.
+        $(imgs_tag).appendTo('#banner_view');
+        $(remote_tag).appendTo('#controll_buttons');
+		
+		
+		/*btns말고 bnum을 추가한이유는 1~9번 숫자들의 버튼만 눌렀을때 작동 시키기위함.*/
+        $('.bnum').click(function(){
+			//자동 버튼 '■' 이면 automode == 1 ,on상태인것.
+            if(automode == 1) return; 
+			/*num엔 1번을 누르면 num=0이들어감  즉 +1필요.*/
+			// $('.bnum').index(this) ->.bnum 중에서 몇번째?
+            // $(this).index()   부모요소를 기준으로 몇번째?
+			$('.bnum').css({background:"white",color:"black"});
+            num = $('.bnum').index(this);
+			$('#btns'+(num+1)).css({background:"black",color:"white"});
+			/*사진의 가로 길이 만큼 이동하자.사진의 속성 보면 가로 세로 길이나옴.*/
+            var k = -1*num*1025;
+            //$("타겟 태근).animate({css속성:값},Duration):이 함수는 css속성을 제어, 움직임 효과에 사용됨.
+            $( '#imgs' ).animate({left:k+"px"}, 500);
+        });
+
+        //왼쪽버튼 클릭시
+        $('#lbtn').click(function(){
+			//모든 버튼을 하얀색으로 만든후 해당 버튼의 아이디만 변경.
+		$('.bnum').css({background:"white",color:"black"});
+		//현재의 버튼위치를 알리는 num을 줄여서 왼쪽으로 이동.
+            num--;
+			//음수가생기는 문제는 방지하자.
+            if(num<0)num=0;
+            var k = -1*num*1025;
+			$('#btns'+(num+1)).css({background:"black",color:"white"});
+            $('#imgs').animate({left:k+"px"}, 500);
+        });
+		//오른쪽버튼 클릭시
+        $('#rbtn').click(function(){
+			$('.bnum').css({background:"white",color:"black"});
+			//현재의 버튼위치를 알리는 num을 늘려서 오른쪽으로 이동.
+            num++;
+			
+            if(num>5)num=5;
+            var k = -1*num*1025;
+			$('#btns'+(num+1)).css({background:"black",color:"white"});
+            $('#imgs').animate({left:k}, 500);
+        });
+		//자동 슬라이드 버튼 클릭시
+        $('#abtn').click(function(){
+            if(automode==0){
+				//setInterval(function(){ 반복 함수의 몸체 실행부});
+                timer = setInterval(function(){
+				$('.bnum').css({background:"white",color:"black"});
+				//num값의 증가로 오른쪽 버튼 누른것 처럼 슬라이드 이동
+                num++;
+                if(num>4)num=0;// 끝에가면 다시 맨 처음 사진으로이동
+                var k = -1*num*1025;
+				$('#btns'+(num+1)).css({background:"black",color:"white"});
+                $('#imgs').animate({left:k}, 500);
+				/*alert(num);*/
+
+                }, 1000);
+                $(this).text('■');
+				//버튼의 on상태 표시
+                automode=1;
+            }else{
+				//on 상태 즉 1이니 else올수 있던것.
+				//window.clearInterval(timer);로 셋인터벌 제거 가능
+                window.clearInterval(timer);
+                $(this).text('▶');
+				//다시 버튼눌렀을때 동작을 위한 0 초기화
+                automode=0;
+				
+
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<div id="Rolling_banner">
+    <div id="banner_view">
+    
+    </div>
+    <div id="banner_bottom">
+        <div id="controll_buttons">
+  </div>
+    </div>
+</div>       
+</body>
+</html>

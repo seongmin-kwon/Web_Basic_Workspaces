@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>img_control_06</title>
+    <style type="text/css">
+        body{margin: 0px;}
+     #base{
+         position:relative;
+         width:600px; 
+         height:400px;
+         margin:0 auto; 
+         border: 1px dashed black;
+         overflow: hidden;
+        
+        }
+        #view{
+            position: absolute;
+            width: 4800px;
+            height: 400px;
+            left:0;
+            top:0;
+            border: 1px dashed red; 
+            transition: 1s;
+        }
+        #remote{
+            position: absolute;
+            width: 200px;
+            border: 1px solid white;
+            height: 90px;
+            margin: 0 auto;
+            left: 200px;
+            bottom: 0px;
+        }
+        img{width: 600px;}
+        .btn{
+            position: relative;
+            float: left;
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+            border-radius: 5px;
+            background: white;
+        }
+        #btn_left{
+            position: absolute;
+            bottom:0px;
+            left:0px;
+            width: 55px;
+            height: 55px;
+            background-image: url(images/ico_movie_171115.png);
+            background-position: 0px -120px;
+           
+        }
+        #btn_right{
+            position: absolute;
+            bottom:0px;
+            right:0px;
+            width: 55px;
+            height: 55px;
+            background-image: url(images/ico_movie_171115.png);
+            background-position: -60px -120px;
+        }
+    </style>
+ 
+    <script type="text/javascript">
+    var num=0;
+        
+        
+    function move(n){
+        var k;
+        if(n==1){
+            if(num==0)return; /*함수 를 끝냄*/
+                num--;
+            }else{
+                if(num==7) return;
+                num++;
+            }
+            k=-1*num*600;
+            document.getElementById("view").style.left=k+"px";
+    
+            }
+        
+    
+    </script>
+</head>
+<body>
+    <div id ="base">
+<div id ="view">
+        <img id="img01" src="images/Koala.jpg"><img id=img03 src="images/Chrysanthemum.jpg"><img id=img04 src="images/Hydrangeas.jpg"><img id=img05 src="images/Jellyfish.jpg"><img id=img06 src="images/Lighthouse.jpg"><img id=img07 src="images/Penguins.jpg"><img id=img08 src="images/Tulips.jpg">    <!--enter 가 영향을 주기 떄문에 이미지 테그는 이어붙혀 준다.-->
+</div>
+<div id =btn_left onclick="move(1)"></div>
+<div id =btn_right onclick="move(2)"></div>
+</div>
+</body>
+</html>

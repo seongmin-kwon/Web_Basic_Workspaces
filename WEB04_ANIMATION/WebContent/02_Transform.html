@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--  
+       #css의 변형함수(2D)
+       1.translate(x,y):지정한 크기만큼 x축과 y축으로 이동.
+       2.translateX(X): 지정한 크기만큼 x축으로 이동.
+       3.translateY(Y):지정한 크기만큼 Y축으로 이동.
+       4.scale(X,Y):지정한 크기만큼 X축과 Y축으로 확대축소.
+       5.scale(X):지정한 크기만큼 y축으로 확대 축소.
+       6.scale(Y):지정한 크기만큼 y축으로 확대 축소.
+       7.rotate(각도): 지정한 크기만큼 회전(단위 :deg)
+       8.skew(X,Y):지정한 크기만큼 X축과 Y축으로 왜곡.
+       9.skew(X):지정한 크기만큼 X축 왜곡.
+       10.skew(Y):지정한 크기만큼 Y축 왜곡.
+        
+        주의 동시에 움직이는거 주의!  XY가아냐!
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_transform.html</title>
+    <style type="text/css">
+        .origin{
+            
+            width: 200px;height: 134px; border: 1px solid black;
+            float:left;
+            margin:40px;
+        }
+        .movex{transition: 2s;}
+        .movey{transition: 2s;}
+        .movexy{transition: 2s;}
+        .movex:hover{transform:translateX(50px);
+/* 브라우저마다 원래 명령이달랐지만 지금은 통일됨*/
+  -webkit-transform:translateX(50px);
+                -ms-transform:translateX(50px);
+                -moz-transform:translateX(50px);
+                -o-transform:translateX(50px); }
+    .movey:hover {transform:translateY(30px);}
+    .movexy:hover {transform:translate(30px, 30px);}   
+        .movey:hover{transform:translateY(30px);}
+        .movexy:hover{transform:translate(30px,30px);}
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="movex"><img src="images/bus.jpg"></div>
+    </div>
+     <div class="origin">
+        <div class="movey"><img src="images/bus.jpg"></div>
+    </div>
+     <div class="origin">
+        <div class="movexy"><img src="images/bus.jpg"></div>
+    </div>
+</body>
+</html>

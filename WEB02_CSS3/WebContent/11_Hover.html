@@ -1,0 +1,64 @@
+<!--부를떄 호버아니져 에이치오버 입니다~-->
+<!DOCTYPE html>
+<!--
+ #반응 선택자#
+- 사용자의 반응으로 생성되는 특정한 상태를 선택하는 선택자.
+-종류
+   1 .  : hover  ->  특정태그(h1)에마우스를 올릴 경우에 반응.
+   2 .  : active -> 특정 태그(h1)에 마우스를 클릭할 경우에 반응.
+    -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box01{background:yellow; width:400px; height: 50px; transition-duration:2s;}
+    /*        transition-duration: 2s 2초에걸려서서히 변화주고싶어*/
+        #box02{background:yellow; width:400px; height: 50px;transition-duration: 2s;}
+        
+        
+        #box01:hover{background:blue; color: white;}
+        #box02:hover{background:blue; color: white;}
+        
+        #box01:active{background: pink; height:800px;}
+        #box02:active{background: pink; height:800px;}
+/*        이옵션은 클릭(클릭후 유지)을 누른 동안에만 변경이된다.*/
+        
+        #box01:active+#box02{background: red; color:black;}
+        #box02:active~#box03{background: green; color:red;}
+        #ul03:hover{
+         color: red;
+         border-bottom:1px solid red;
+         
+        }
+        
+        
+    </style>
+</head>
+<body>
+<div id="third">
+    <div id="third_view">
+        <div id="third_view_left">
+            <ul id="ul03">
+                <li>&nbsp;홈&nbsp;</li>
+                <li>현재상영/개봉예정</li>
+                <li>박스오피스</li>
+                <li>뉴스</li>
+                
+            </ul>
+        </div>
+        <div id="third_view_right">내평점</div>
+    </div>
+</div>
+    <div id="box01">
+        <h1>User Action Selector1</h1>
+    </div>
+    
+    <div id="box02">
+        <h1>User Action Selecto2r</h1>
+    </div>
+    <div id="box03">
+        <h1>User Action Selector3</h1>
+    </div>
+</body>
+</html>

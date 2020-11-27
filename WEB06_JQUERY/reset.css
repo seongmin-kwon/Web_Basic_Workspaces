@@ -1,0 +1,8 @@
+body{
+	margin: 0px;
+	
+}
+
+/*@import url("reset.css"); 임포트 편안한 방법 페이지 열고 임포트하러찾아가는 부분에서 무거운 파일일시 오래걸릴수도있다..*/
+/*<link href="../css/style.ccs" type="text/css"> 비동기화로 1번에 찾아서 옴 빠른편*/
+

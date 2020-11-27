@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05_Effect_02</title>
+    <style type="text/css">
+        div{background: #3d9a44; margin: 3px; width:80px; height: 100px; float: left;}
+    </style>
+    
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+           $(function(){
+            $('#slidUp').click(function(){$('div').slideUp(); });
+            $('#slidDown').click(function(){$('div').slideDown(); });
+            $('#slidToggle').click(function(){$('div').slideToggle('slow'); });
+    });
+
+    </script>
+    
+</head>
+<body>
+    <button id= "slidUp">SlidUp</button> <!--버튼을 만드는 또 다른 방법-->
+    <button id= "slidDown">SlidDown</button>
+    <button id= "slidToggle">SlidToggle</button>
+    <br/><br/><br/>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+</html>

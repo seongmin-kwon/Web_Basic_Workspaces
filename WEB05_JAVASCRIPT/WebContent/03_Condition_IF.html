@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    /*1.if조건문*/
+        /*
+    var date =new Date();
+    var hour= date.getHours();/
+        
+    if(hour<11){
+        alert(hour +'시: 아침 먹을 시간입니다.');
+    }else if(hour<15){
+         alert(hour +'시: 점심 먹을 시간입니다.');
+    }else{
+         alert(hour +'시: 저녁 먹을 시간입니다.');
+    }
+    
+    var min = date.getMinutes();
+        alert(min+'분');
+    ver sec = date.getSeconds();
+        alert(sec+'초');
+        var year1= date.getFullYear();
+        //getYear() 함수는 원래 년도에서 1990년을 뺀 값을 리턴함.
+        //getYear() 함수는 웹표준에서 제거 (되었음)
+        //getFullYear()로 대체 되어 사용중.
+        alert(year1+'년');
+        var month = date.getMonth();
+        alert((month+1)+'월'); //여전히 월 0~11f로 +1해서 사용한다.
+        var date1 = date.getMonth();
+        alert(date1+'일');
+        var week = date.getDay();
+        if(week==1)alert('월요일');
+        else if(week==2)alert('화요일');
+        else if(week==3)alert('수요일');
+        else if(week==4)alert('목요일');
+        else if(week==5)alert('금요일');
+        else if(week==6)alert('토요일');
+        else alert('일요일')
+        
+        */
+        
+        /*2. switch 조건문
+        var input = number(prompt('숫자를 입력하세요.','숫자'));
+        switch(input % 2){
+            case 0:
+                alert('짝수 입니다.');
+                break;
+            case 1:
+                alert('홀수 입니다.');
+                break;
+            default:
+                alert('숫자가 아닙니다.');
+                break;
+        }
+        
+        
+        */
+        
+        /*3항 연산자*/
+        /*
+        var input = Number(prompt('숫자를 입력하세요','숫자'));
+        (input >0)?alert('양수입니다.'):alert('음수입니다.');
+        if(input>0){
+            alert('양수 입니다.')
+        }else{
+            alert('음수 입니다.')
+        }
+        */
+        
+        /*
+        문제)
+        월과일을 입력 받아 요일을 출력하는 코드 작성.
+        요일은 2020년에 한해서만 계산하되 ,2020년 1월 1일은 수요일 인것을 기준으로 코드를 작성합니다.
+        */
+        var sumM =0; //합산 날자수
+        var Tday=0;
+        var input= prompt('월을 입력하세요','1~12');
+        var month=Number(input);
+        var input= prompt('일을 입력하세요','1~31');
+        var day=Number(input);
+
+    switch (month) {
+    case 1:
+        sumM=0;
+        Tday = (sumM+day)%7;
+        break;
+    case 2:
+        sumM=31;
+        Tday = (sumM+day)%7;
+        break;
+    case 3:
+        sumM=31+29;
+        Tday = (sumM+day)%7;
+        break;
+    case 4:
+        sumM=31+29+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 5:
+        sumM=31+29+31+30;
+        Tday = (sumM+day)%7;
+        break;
+    case 6:
+        sumM=31+29+31+30+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 7:
+        sumM=31+29+31+30+31+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 8:
+        sumM=31+29+31+30+31+31+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 9:
+        sumM=31+29+31+30+31+31+31+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 10:
+        sumM=31+29+31+30+31+31+31+31+30;
+        Tday = (sumM+day)%7;
+        break;
+    case 11:
+        sumM=31+29+31+30+31+31+31+31+30+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 12:
+        sumM=31+29+31+30+31+31+31+31+30+31+30;
+        Tday = (sumM+day)%7;
+        break;
+    }
+    
+    if(Tday==1) {
+       alert("입력한 날자는 2020년 "+month+'월'+day+"일은 수요일 입니다.\n");
+        
+    }
+    if(Tday==2) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 목요일 입니다.\n");
+        
+    }
+    if(Tday==3) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 금요일 입니다.\n");
+        
+    }
+    if(Tday==4) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 토요일 입니다.\n");
+        
+    }
+    if(Tday==5) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 일요일 입니다.\n");
+        
+    }
+    if(Tday==6) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 월요일 입니다.\n");
+        
+    }
+    if(Tday==0) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 화요일 입니다.\n");
+        
+    }    
+ 
+ 
+}
+
+    alert("입력한 날자는 2020년 "+month+'월'+day+"일은 입니다.\n");          
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

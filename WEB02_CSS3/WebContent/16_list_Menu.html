@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #tmenu{
+            list-style:none;/*앞에있던 글머리기호 떙떙이들이 사라짐 하지만 위치는 유지*/
+            padding: 0px;/*padding: 0px; 남아있던 빈자리까지 없애기  */
+            margin:0px;
+            
+        }
+        #tmenu li{
+            float:left;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;/*4개방향모든 부분 패딩 20줌*/
+            background: yellow;
+            border-right:1px solid;
+        }
+        /*후손선택자로 아래 다부르기~*/
+        
+        
+    </style>
+</head>
+<body>
+   <ul id="tmenu">
+       <li class="A">회사소개</li>
+       <li class="A">사업소개</li>
+       <li class="A">고객지원</li>
+       <li style ="border-right-width: 0px;" class="A">회사소개</li>
+   </ul>
+    
+</body>
+</html>

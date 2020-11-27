@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			margin:0px;
+		}
+		
+		.content-box{
+			height:inherit;
+			width:960px;
+			background: #ff000020;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#footer{
+			height:70px;
+			background: blue;
+		
+		}
+			#aside{
+			width:35%;
+			height:70px;
+			background: pink;
+		
+		}	#header{
+			height:70px;
+			background: green;
+		
+		}	
+		#main{
+			width:65%;
+			height:70px;
+			background: red;
+		
+		}
+		body>#margin{
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+
+	<header id="header"><div class="content-box">즐거운 웹 프로그래밍</div></header>
+	<div id="margin">
+	<aside id="aside"><div class="content-box">어사이드 부분</div></aside>
+	<main id="main"><div class="content-box">메인 부분</div></main>
+	</div>
+	<footer id="footer"><div class="content-box">푸터 부분 </div></footer>
+</body>
+</html>

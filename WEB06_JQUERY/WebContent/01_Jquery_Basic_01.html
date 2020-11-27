@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- 
+jQuery 기본
+ 1. jQuery 개요
+  - 모든 브라우저에서 동작하는 클라이언트 자바스크립트 라이브러리.
+  - 다음의 기능을 위해 제작
+   . DOM과 관련된 처리를 쉽게 구현
+   . 일관된 이벤트 연결을 쉽게 구현
+   . 시각적 효과를 쉽게 구현
+   . ajax 애플리케이션을 쉽게 구현
+  - http://jquery.com
+  - jQuery 사용 방법
+   1) 직접 다운받아 사용하는 방법.(추천)
+   2) CDN 호스트 사용하는 방법.
+     . Content Delivery Network
+     . 사용자에게 간편하게 콘텐츠를 제공하는 방식을 의미.
+     . 구글, 마이크로소프트, jQuery측에서 사용자가 jQuery를 사용하기 편하게 콘텐츠를 제공.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리 기초1</title>
+<!--라이브러리 포함 방법 2가지방식-->
+<!--
+라이브러리이기때문에 설치과정이필요하다.
+자바스크립트처럼 내장되있는것이아닌 라이브러리이기때문이다.
+-->
+
+<!--방법1 :직접 다운로드한다.(추천방법)-->
+<script src="js/jquery-3.5.1.js"></script>
+<!-- 이제 제이쿼리를 쓴다면 항상 위의문구가있어야 실행되고 또 그 소스를찾아가면 jquery-3.5.1.js 파일이 해당경로의 js파일안에 있어야만 실행 된다. 가져와서 로드하여 사용하는 개념-->
+
+<!--  이렇게 아래와 같이 특정폴더를 설정하여 그곳에 사용자가 .js파일을 저장하고 함수들을 불러오거나 저장한 것을 참조할 수도 있다.-->
+<script src="scrip/jQueryBasic.js"></script>
+
+<!--방법2: 링크 연결-->
+<script src ="http://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+/*2.제이쿼리를 사용한 웹페이지 형식*/
+$(document).ready(function(){ // 다큐먼트가 준비(로드)가 다되었다면
+    alert("First Ready"); // 동작 ()익명함수 실행부분
+});
+/*
+-> 실행은 다 이런식이다. : 누군가가 이렇게 바뀌면 저렇게 실행하라. 제이쿼리 명령의 평소 형식이니 알아두자.
+    */
+ /*  
+-위구문은 read괄호안에 안의 익명함수 명령 영역은 현제 페이지의 제이쿼리 구문이 모두 들어가서 실행하게 되는곳입니다. 여러개가 쓰여져도 상관은 없지만 그 안에 명령을 넣지 않으면 제이쿼린 명령은 실행이되지 않습니다. 그리고 앞으로의 구문은 아래와 같이짧은 구문으로 대신합니다.
+-줄임 코드: -$(function(){}); 로사용 즉 (document).ready 를 생략 하지만 같은의미의 사용
+ */       
+/*
+     /* 2. 제이쿼리를 사용한 웹페이지 형식 정리 */
+/*
+     가. $(document).ready(function(){  alert("First Ready"); });
+     나. onload 이벤트와 유사한 동작
+     다. 문서가 준비완료되면 매개변수 전달된 함수를 실행하라는 의미
+     라. $( 명령을 내릴 대상 ).명령 또는 상태이베트( 실제 동작할 익명함수 )
+     마. 누군가가 이렇게 바뀌면 저렇게 실행해라 - 제이쿼리 명령의 평소 형식
+     바. $(document).ready(function(){         });
+       // 위 구문에서 ready괄호 안의 익명함수 명령 영역은  현재 페이지의 제이쿼리 구문이 모두 들어가서 실행하게 되는 곳입니다. 여러개가 쓰여져도 상관은 없지만 그 안에 명령을 넣지 않으면 제이쿼리 명령은 실행되지 않습니다. 그리고 앞으로의 구문은 아래와 같이 짧은 구문으로 대신합니다   ->  (document).ready 를 생략
+     사. $(function(){  });
+*/
+        
+/*     $(function(){
+            
+        });  */
+        
+/*   <ex>
+        alert("Secon Read"); // 잘못된 예
+        $("#tit").css("color","red");// 잘못된 예
+
+        $(function(){
+            alert("Third Ready");//올바른예
+              $("#tit").css("color","red");//올바른예
+            //절대 function영역을 벗어나지 말자.
+        });
+*/     
+        
+        
+/*      ex)
+        <3.제이쿼리의 기본 선택자>
+        -jQuery 메서드의 가장 기본적인 형태
+        - .문서 객체를 다룰떄 사용하는 형태
+        - .jquery 에서 가장 많이 사용하는 형태
+        
+        - 1) 전체 선택자(*)
+        $(function()){
+        $("*").css("border","1px solid bule");
+        });
+        
+        
+        - 2)태그선택자 ex)
+        $(function(){
+        $("h2").css("background-color","#0ff").css("border","2px dashed #f00");
+        });
+        
+        
+        ex)두개이상의 태그를 선택
+       $(function(){
+            $("h1, h2").css("background-color","#0ff").css("border","2px dashed #f00");
+        });
+       - 3)아이디 선택자
+          $(function(){
+        $("#tit").css("background-color","#ff0").css("border", "2px solid #f00").css("font-size", "250%");
+        });
+
+       - 4)클래스 선택자
+         $(function(){
+            $(".tit2").css("background-color","#ff0").css("border","2px dashed #f00").css("font-size","200%");
+        });
+       - 5)종속 선택자
+        $(function(){
+            $("h1#tit").css("background-color","#ff0").css("border","2px dashed #f00").css("border","2px dashed blue");
+        });
+        */
+    </script>
+</head>
+<body>
+<h1 id="tit">제목</h1>
+<h1>제이퀀리</h1>
+<h2>선택자</h2>
+<h3>직접선택자.</h3>
+<h1 class ="tit2">제목</h1>
+</body>
+</html>

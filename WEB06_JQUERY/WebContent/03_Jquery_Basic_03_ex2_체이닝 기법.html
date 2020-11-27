@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        /*
+        <체이닝 기법>
+        -한 객체에 다양한 메서드를 줄줄이 이어서 사용할 수 있다.
+        즉 선택한 요소에 메서드를 연속적으로 사용할 수 있는데,
+        이를 마치 체인이 엮인 모양과 같다하여 체이닝 기법이라 할뿐 별것 없다.
+        제이쿼리에선 한객체{}에 다양한 메서드로 줄줄이 이어서 사용할수 있다는것이다.
+        그리고 메서드 연결시 문장의 마지막에; 반드시 붙혀주자!
+        
+        # 내부적으로 각 메서드들은 항상 jQuery메서드가 적용되기 전에 선택된 요소를 반환하는데, 그렇기에 체인을 계속 이어갈 수 있는것이다.
+        ex)
+        jQuery('div').hide();      // 페이지의 모든 div를 숨김
+        jQuery('div').text('new contents');     // 모든 div의 내부 텍스트를 변경
+        jQuery('div').addClass("updatedContent"); // div에 updatedContent 클래스를 추가
+        jQuery('div').show();  // 페이지에 모든 div를 나타냄.
+        체인개념으로 인해 아래와 같이 변경됩니다.
+        jQuery('div').hide()
+                  .text('new contents')
+                  .addClass("updatedContents")
+                  .show();
+
+
+        
+        */
+		$(function() {
+			$("button").on("click", function() {
+				// id가 "list"인 요소의 자손 요소 중에서 <li>요소를 모두 선택한 후에,
+				// 그 중에서 두 번째 요소의 값을 설정함.
+				$("#list").find("li").eq(1).text("두 번째 아이템을 선택했어요!!");
+			});
+		});
+	
+    </script>
+</head>
+<body>
+	
+	<h1>메소드 체이닝</h1>
+	<ul id="list">
+		<li>첫 번째 아이템이에요!</li>
+		<li>두 번째 아이템이에요!</li>
+		<li>세 번째 아이템이에요!</li>
+	</ul>
+	<button>텍스트 변경</button>
+</body>
+</html>

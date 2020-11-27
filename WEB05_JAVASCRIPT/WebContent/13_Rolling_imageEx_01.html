@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_rollingimgEx</title>
+    <script type="text/javascript">
+     function changeImg(){
+         document.getElementById("target").src='images/2.jpg';
+         //id값으로 테그하나 선택후 조작하겠습니다.
+         //body 안쫏의 많은 태그중에서 특정 태그를 조작하겠습니다.
+         
+         
+     }
+        
+    function recoverImg(){
+         document.getElementById("target").src='images/1.jpg';
+     }
+    </script>
+</head>
+<body>
+    <img src="images/0.jpg" id="target" onmouseover="changeImg()" onmouseout="recoverImg()">
+    <!--
+    -onmouseover="함수" 마우스가 사진에 올라갔을때 : 해당 태그에 마우스 포인터가 올라가면 일어나느 이벤트를 태그에 직접 줄수 있는 자바스크립트!
+    -onmouseout="함수" 마우스가 사진을 나갔을떄:해당태그에서 마우스 포인터가 밖으로 벗어나면 일어나는 이벤트
+    -->
+</body>
+</html>

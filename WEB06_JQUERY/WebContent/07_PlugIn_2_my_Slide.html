@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>플러그인 내가 만들기 </title>
+<style type="text/css">
+    *{ margin: 0px; padding:0px;}
+    ul{list-style:none;}
+    img{width:500px; height: 350px;}
+    
+    #my-fade li{
+        display: none;
+        position: absolute;
+        left: 0px;
+        top:0px;
+    }
+</style>
+<script src="js/jquery-3.5.1.js"></script>
+<!--<script src="js/jquery.innerfade.js"></script>-->
+<!--이번엔 직접 가져다 사용하지말고 플러그인 을 만들어봅시다.-->
+<script type="text/javascript">
+    
+
+           $(function(){
+            var interval = 3000;  // 간격은 3초
+            // slideshow라는 클래스가 부여된 요소 각각에 대해서 처리하기
+            $('#my-fade').each(function(){
+                // img요소들을 둘러싸고 있는 div요소를 취득
+                var container = $(this);
+                // 페이드 전환 1회분의 함수
+                function switchImg(){
+                    // img요소를 전부 취득
+                    var imgs = container.find('img');
+                    //앞에서부터 img요소 2개를 얻는다.
+                    var first = imgs.eq(0);// 선두의 img요소
+                    var second = imgs.eq(1);// 2번째의 img요소
+
+                    // 처음의 img요소를 페이드아웃시켜, 가장 뒤로 이동
+                    first.fadeOut(2000).appendTo(container);
+                    // 2번째의 img요소를 페이드인 시킨다.
+                    second.fadeIn(2000);
+                }
+                // 3초 마다 switchImg를 실행
+                setInterval(switchImg, interval);
+            });
+        });
+    
+</script>
+</head>
+<body>
+<ul id = "my-fade">
+    <li><img src="images/Desert.jpg"></li>
+    <li><img src="images/Hydrangeas.jpg"></li>
+    <li><img src="images/Chrysanthemum.jpg"></li>
+    <li><img src="images/Koala.jpg"></li>
+    <li><img src="images/Penguins.jpg"></li>
+    <li><img src="images/Tulips.jpg"></li>
+</ul>
+</body>
+</html>

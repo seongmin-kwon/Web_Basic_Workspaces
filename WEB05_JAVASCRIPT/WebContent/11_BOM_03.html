@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM03</title>
+    <script type="text/javascript">
+        /*lotation 객체*/
+        /*
+        -브라우저의 주소 표시줄과 관련된 객체
+        -프로토콜의 종류, 호스트의 이름, 문서 위치등의 정보를 가짐.
+        -페이지를 이동할 떄 많이 사용.
+        */
+        var output='';
+        for(var key in location){
+            output += '#'+key+':'+location[key]+'\n';
+        }
+        alert(output);
+        //==========================================================
+        //페이지를 이동하는 방법 4가지
+        //location ='http://www.daum.net';
+        location.href='http://www.daum.net'; //가장많이 사용하는 방법
+        //location.assign('http://www.daum.net');
+        //location.replace('http://www.daum.net');// 단 이방법은 뒤로가기 버튼을 사용할 수없다.
+        //==========================================================
+        //-현재 페이지 새로 고침
+        //location = location;
+        //location.href=location.href;
+        //location.assign(location);
+        //location.replace(location);
+        //location.reload();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

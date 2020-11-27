@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>built_in_object</title>
+    <script type="text/javascript">
+    //2. Number객체
+    //-생성방법 2가지
+    //EX  
+        /*
+    var numberFromConstructor = new Number(273);//생성자에 의한 생성
+    var numberFromLiteral = 273; //수치데이터 입력에 대한 생성
+        
+    alert(typeof(numberFromConstructor)); //object
+    alert(numberFromConstructor.toString());  //273 
+    alert(typeof(numberFromLiteral));//Number
+    alert(numberFromLiteral.toString());  //273 
+      */  
+        /*오브젝트와 넘버  둘의 차이가 크게 없으나 스테틱적인 활용면에서 차이있다.*/
+        /*
+        -Number 생성자 함수의 속성
+        .MAX_VALUE:자바스크립트의 숫자가 나타낼 수 있는 최대 숫자.
+        .MIN_VALUE:자바스크립트의 숫자가 나타낼 수 있는 최소 숫자.
+        .NEGATIVE_INFINITY:음의 무한대 숫자.
+        .POSITIVE_INFINITY:음의 무한대 숫자.
+        .NAN: 자바스크립트 숫자로 나타낼수 없는 숫자.
+        */
+    alert(Number.MAX_VALUE);
+    alert(Number.POSITIVE_INFINITY);
+        
+        /*String 객체
+        //ex
+        var stringFromLiteral = "hello world..!";
+        var stringFromConstructor=new String('hello world..!');
+        alert(typeof(stringFromLiteral)+':'+typeof(stringFromConstructor));
+        
+        //-length 속성:문자열의 길이
+        alert(stringFromConstructor.length);
+        alert(stringFromLiteral.length);
+        var characters = prompt('비밀번호를 입력하세요','6글자 이상');
+        
+        if(characters.length<6){
+            alert('6자이상 입력하세요');
+            
+        }else{
+            alert('입력되었습니다.');
+        }
+        */
+          /*
+          <문자 자료형 가공 내장 함수들>
+        -charAt(index) -문자열에서 인덱스 번호에 해당하는 문자를 반환
+        - indexof(찾을 문자)-문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의 위치를 반환 합니다. 찾는 문자가 없으면 -1을 반환합니다.
+        - lastIndexof(찾을 문자.)-문자열에서 오른쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의 위치를 반환 합니다. 찾는 문자가 없으면 -1을 반환합니다.
+        - match(찾은문자)-문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의 위치를 반환 합니다. 찾는 문자가 없으면 null을 반환합니다.
+        - replace(바꿀문자,새문자)-문자열에서 왼쪽부터 바꿀 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자를 새문자로 치환
+        - serch(찾을 문자)-문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의 위치를 반환 합니다.
+        - slice(a,b)-a개의 문자를 자르고b번째 이후에 문자를 자른 후 남은 문자를 반환합니다.
+        - substring(a,b) -a위치부터 b 이전 위치까지 문자를 추출하여 반환합니다.
+      
+        -substr(a,문자갯수):문자열에 a위치부터 지정한 문자갯수만큼 문자를 추출 변환
+        -split(문자): 지정한 문자를 기준으로 데이터를 나누어 배열에 저장하여 변환
+        -toLowerCase(): 모두 소문자로
+        -toUppeCase():모두 대문자로
+        -concat(새로운문자):새로운 문자열 이어붙이기
+        -charCodeAt(a): -a위치의 문자 아스키 코드 값을 반환
+        -fromCharCode(아스키코드값):아스키 코드 값에 해당하는 문자를 반환
+        -trim(): 문자 앞뒤에 존재하며 안보일수 있는 공백을 제거 합니다.
+        
+        */
+        
+        //ex
+        var str = "Hello Thank you good luck to you";
+        document.write(str.charAt(16),"<br>");//16번쨰 글자위치 g출력
+        document.write(str.charAt(0),"<br>");//  0번째 글자위치 H출력
+        document.write(str.indexOf("you"),"<br>");//첫글자부터찾은 you위치 :12
+         document.write(str.indexOf("you",16),"<br>");
+        //you의 위치(16번쨰 글자부터찾음)-29
+         document.write(str.lastIndexOf("you",25),"<br>");
+        //you의 위치(16번쨰부터 왼쪽으로 탐색 찾음)-12
+        document.write("1"+str.match("luck"),"<br>"); //luck-매칭된글자 찾아주고있으면 해당 문자열 반환 없으면  NULL나온다.
+        document.write(str.search("you"),"<br>"); //12-검색된 글자위치
+        document.write(str.substr(21,4),"<br>");    //luck-21부터 4글자
+        document.write(str.substring(6,12),"<br>");  //Thank 6부터 11까지
+        
+        document.write(str.replace("you","me"),"<br>");
+        //Hello Thank me good luck to you
+        
+        document.write(str.toLowerCase(),"<br>");
+        //hello thank you good luck to you
+        document.write(str.toUpperCase(),"<br>");
+        //HELLO THANK YOU GOOD LUCK TO YOU
+        
+        var arr =str.split(" ");//공백으로 문자열을 나눠서 배열에 저장
+        document.write(arr[0], "<br>");// Hello
+        document.write(arr[4], "<br>"); //luck
+        document.write(str.charAt(0), "<br>"); //72
+        document.write(String.fromCharCode(72), "<br>");//H 실제 아스키코드의 값이뭔지 문자 알려줌 아스키 숫자박으면
+        
+        
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

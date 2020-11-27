@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05_Effect_02</title>
+    <style type="text/css">
+         span{font-size: 180%; font-weight: bold; display: none;}
+    </style>
+    
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+           $(function(){
+        $('button:eq(0)').click(function(){
+            $('span:first').toggle(500, function(){
+                $(this).css('background','yellow');
+            });
+        });
+    });
+        
+    $(function(){
+        $('button:eq(1)').click(function(){
+            $('span:last').toggle(1500, function(){
+                $(this).css('background','red');
+            });
+        });
+    });
+
+    </script>
+    
+</head>
+<body>
+    <button>Show It/Hide It</button> <!--버튼을 만드는 또 다른 방법-->
+   
+    <span>안녕하세요.</span>
+    <br>
+    
+    <button>Show It slow/Hide It slow</button>
+    <span>반갑습니다.</span>
+
+</body>
+</html>

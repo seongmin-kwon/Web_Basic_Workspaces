@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM_SEARCH</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+    /*1.기본 필터링 메서드*/
+    
+        -filter() 메소드 사용 두가지 형태
+        1. $(selector).filter(selector);
+        2. $(selector).filter(function(index){});
+        
+        //예제: 짝수 번쨰 또는 홀수 번쨰속성 변경
+       //메서드 적용형태1
+         $(function(){
+            $('h3:even').css({backgroundColor:'black',color:'white'});
+        });
+        
+         $(function(){
+            $('h3:odd').css({backgroundColor:'blue',color:'yellow'});
+        });
+        
+        //메서드 적용 형태2
+        $(function(){
+           $('h3').filter(function(index){return index%3==0;}).css({backgroundColor:'green',color:'white'}); 
+        });//  3의 배수 만 리턴 하여 사용 ,필터안에 익명함수 넣어서 배수 도 골라낸다.
+       
+       //
+       2. 문서 객체 탐색 체이닝과 종료
+        //예제1
+        //체이닝을 사용한 한 줄로 서로 다른 문서 객체에 스타일 적용 가능.
+        $(function(){
+             $('h3').css('background','orange').filter(':even').css('color','red'); 
+        });
+        
+        //문서 객체의 css변경을 마친 경우 리턴 되는 값이다시 문서객체이므로 위와 같이 또다른 탐섹이나 css내용을 이어서 적용 시킬 수 있습니다.
+        //필터링된 선택자로 css 를변경`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //따라서 다른 체이닝을 이어서 사용하면 계속 필터링된 결과에 적용 되게 됩니다. 채이닝에 의한 필터 결과 유지를 헤제하려면 아래처럼 따로 필터링 하거나 end()함수 를 사용합니다.
+        //예제2
+        //체이닝을 사용하지 않은 예
+        /* $(function(){
+             $('h3').css('background','orange');
+             $('h3:even').css('color','white');
+             $('h3:od')..css('color','red'); 
+         });
+        //예제3. 채이닝과 end() 함수를 같이 사용한 예
+       /* $(function(){
+           $('h3').css('background','red').filter(':even').css('color','orange').end().filter(':odd').css('color','white'); 
+            //end():문서 객체 선택을 필터링 이전 한단계 뒤오 돌리는 함수 입니다. 현재 적용한 css를 유지하면서 $('h3').css('background','red').filter(':even')를 다시 적용하자.
+        });*/
+    /*문서 객체 추가 선택*/
+        //- add() : 기존 문서 객체를 포함하여 추가로 문서 객체를 선택.
+       /* $(function(){
+        $('h1').css('background','gray').add('h2').css('color','red');
+            });*/
+        //h1에 배경 gray 적용후 h2도 추가해서 글자색 빨강으로 적용
+        //$('h1').css('background','gray')
+        //$('h1','h2').css('background','red')
+        
+    
+         
+        /* 문서 객체의 특징 판별 */
+        // -is()
+        $(function(){
+            // $('h1').each(function(index , item){ })의 사용방식에서...
+            // this 를 사용하면서 index 값이나 item 변수가 필요가 없을시 function() 안에 사용생략하며 사용이 가능합니다. 다만 이경우 현재 this 의 인덱스를 알아내려면 별도의 함수가 필요합니다.
+            $('h1').each(function(){
+                if($(this).is('.select')){
+                    $(this).css('color','red');
+                }
+            });
+        });
+        
+
+        //$('h1').each(function(index, item{}))의 사용방식에서...
+        // 괄호안에 인덱스랑 아이템을 사용할 필요가없을때
+        //is 는 좌우가 일치하는냐 그런거 물어보는것이다.
+        //this 를 사용하면서 index 값이나 item 변수가 필요가 없을시 function()안에 사용생략하여 사용이 가능합니다. 다만 이경우 현재 this의 인덱스를 알아내려면 별도의 함수가 필요 합니다.
+        
+    </script>
+</head>
+<body>
+<!--기본 필터링 메서드-->
+<!--<h3>헤더 -0</h3>
+<h3>헤더 -1</h3>
+<h3>헤더 -2</h3>
+<h3>헤더 -3</h3>
+<h3>헤더 -4</h3>
+<h3>헤더 -5</h3>-->
+<!--2. 문서 객체 탐색 체이닝과 종료-->
+<!--<h3>헤더 -0</h3>
+<h3>헤더 -1</h3>
+<h3>헤더 -2</h3>
+<h3>헤더 -3</h3>
+<h3>헤더 -4</h3>
+<h3>헤더 -5</h3>-->
+<!--문서 객체 추가선택-->
+<!--<h1>헤더 -0</h1>
+<h3>헤더 -1</h3>
+<h3>헤더 -2</h3>
+<h3>헤더 -3</h3>
+<h3>헤더 -4</h3>
+<h3>헤더 -5</h3>-->
+<!--문서 객체의 특징 판별-->
+<h1 class="select">헤더 -0</h1>
+<h1 >헤더 -1</h1>
+<h1 >헤더 -2</h1>
+    </body>
+</html>

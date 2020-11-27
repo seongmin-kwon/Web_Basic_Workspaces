@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    div{width: 200px; height: 200px; float:left; margin:50px;}
+    #box1 { background-color: #4cff00; border: 1px solid black; animation-name: shape; animation-duration: 2s}
+    #box2 { background-color: #8f06b0; border: 1px solid black; animation-name: rotate; animation-duration:2s;}
+    /* box1 에는 검은색 1px 외곽선에서 시작하여 border-radius - 50% 로 변하는 애니메이션을 shape라는 이름으로 생성하여 적용하세요*/
+    /* box2에는 45도 회전하는 애니메이션을 rotate 라는 이름으로 생성하여 적용하세요 */
+    /* 두 애니메이션 모두 재생시간은 2초로 설정하세요 */
+    @keyframes shape{
+ from{ border: 1px solid black; }
+ to{ border-radius:50%; }
+    }
+    @keyframes rotate {
+  from {transform:rotate(0deg)}
+  to {transform: rotate(45deg);}
+    }
+</style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>   
+</body>
+</html>

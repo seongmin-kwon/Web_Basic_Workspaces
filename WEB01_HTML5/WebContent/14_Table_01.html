@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table 01</title>
+</head>
+<body>  <!-- tr:table row(행)    td:table date(열)    th:table head(제목행 또는 제목열) -->
+<!-- Table 태크는 tr태그를 감싸고, tr태그는 td태그를 감쌉니다 -->
+<!-- th 는 행제목과 열제목 위치에서 td대신 사용되곤 합니다. 평번한 칸이아닌 제목으로 사용될 칸으로 사용 -->
+<!-- td 는 열을 담당하는 태그이고 직접 테입르에표시될 데이터가 쓰여집니다. -->
+<!-- Table 태그의 width : 테이블의 전체 가로 크기를 지정합니다. 각 td 태그에 각자의 width 값이
+설정되어 있지 않다면 각 td의 width 는 전체 table의 width 값에 맞춰 균등 분배 됩니다-->
+
+<!-- td 태그의 width : 각 열의 width 값을 설정하며, 전체 Table 의 width 값에 영향을 받습니다
+전체 td 의 width 값의 합이 table 태그의  width 값을 초과하면, table 태그의 width 값을 상한선으로
+각 td 값이 자동 조정되어 원하는 크기 가 표시 되지 않으므로,  td의 width  값과   table 의 width값은
+상호 보완적으로 계산하여 적정 값을 설정하는 것이 중요합니다 -->
+
+<!--  또한 맨 윗행의 width 값을 설정하여 결정이 되면 아래 행들은 모두 그 크기가 적용되므로 따로 더 설정
+하지 않아도 됩니다. -->
+
+<!-- table 태그의 cellpadding="10" : 셀안에 내용물과 셀 경계선과의 사이 공간 -->
+<!-- table 태그의 cellspacing="1" : 셀과 셀사이의 공간 -->
+<!-- table 태그의 align="center" : 웹브라우져 상의 좌-우-가운데 위치 맞춤 -->
+<!-- table 태그의 bgcolor="red" : 테이블 태그에 적용되는  전체 배경색 -->
+<table  width="750" cellpadding="10" cellspacing="1" align="center" bgcolor="red">
+ <!-- tr 태그의 bgcolor="white" : tr태그에만 적용되는 부분 배경색 , 배경색을 td 에 설정할수도 있지만
+ 그럴경우 25번을 써줘야하므로 tr에 적용해서 5번만 써줍니다-->
+ <!-- tr 태그의 align="center" : 셀안에서의 내용물의 좌우가운데 정렬을 의미합니다 -->
+ <!-- tr 태그의 height="50" : 각 행의 세로 크기를 지정합니다 -->
+ <tr bgcolor="white" align="center" height="50">
+  <td width="150">1행 1열</td>
+  <td width="150">1행 2열</td>
+  <td width="150">1행 3열</td>
+  <td width="150">1행 4열</td>
+  <td width="150">1행 5열</td>
+ </tr>
+ <tr bgcolor="white" align="center" height="50">
+  <td>2행 1열</td>
+  <td>2행 2열</td>
+  <td>2행 3열</td>
+  <td>2행 4열</td>
+  <td>2행 5열</td>
+ </tr>
+ <tr bgcolor="white" align="center" height="50">
+  <td>3행 1열</td>
+  <td>3행 2열</td>
+  <td>3행 3열</td>
+  <td>3행 4열</td>
+  <td>3행 5열</td>
+ </tr>
+ <tr bgcolor="white" align="center" height="50">
+  <td>4행 1열</td>
+  <td>4행 2열</td>
+  <td>4행 3열</td>
+  <td>4행 4열</td>
+  <td>4행 5열</td>
+ </tr>
+ <tr bgcolor="white" align="center" height="50">
+  <td>5행 1열</td>
+  <td>5행 2열</td>
+  <td>5행 3열</td>
+  <td>5행 4열</td>
+  <td>5행 5열</td>
+ </tr>
+</table>
+</body>
+</html>

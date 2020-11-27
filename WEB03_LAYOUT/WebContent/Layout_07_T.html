@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+    /*first 시작*/
+    #first{position:relative; width:100%; height:140px; border:1px dashed black;} 
+    #first_text1{position:relative; margin:0 auto; width:400px; height:70px; border:1px dashed blue; font-size:200%; font-weight:bold; line-height:70px; text-align:center; }
+    #first_text2{position:relative; margin:0 auto; width:400px; height:70px; border:1px dashed blue; font-size:90%; color:gray; }
+    /*first 끝*/
+   
+    /*second 시작*/
+    #second{position:relative; width:100%; height:600px; border:1px dashed black;}
+    #view{position:relative; width:1100px; height:600px; border:1px solid red; margin:0 auto;}
+    .rect{position:relative; width:348px; height:600px; border:1px dashed blue; margin-right:25px; float:left; overflow:hidden; }
+    .img{ position:relative; width:350px; height:300px; overflow: hidden;}
+    .box{ position:relative; width:310px; height:280px; margin:0 auto; border:1px solid silver; box-shadow:5px 5px 5px gray; top:-30px; background: white;}
+    .button{ position:absolute; background:blue; width:150px; height:40px; color:white; right:0px; bottom:30px; font-size:150%; line-height: 40px; text-align:center; font-weight: bold;}
+    .title{position:relative; width:280px; height:80px; margin:0 auto; border:1px solid silver; font-size:200%; font-weight :bold; text-align:center; line-height:80px;}
+    .text{position:relative; width:280px; height:200px; margin:0 auto; border:1px solid silver; text-align:center;font-size : 90%; color:gray}
+    /*second 끝*/
+</style>
+</head>
+<body>
+<div id="first">
+    <div id="first_text1">Content Title</div>
+    <div id="first_text2">비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.</div>
+</div> 
+
+
+<!--second 의 시작-->  
+<div id="second">
+    <div id="view">
+       <!--첫번째 rect-->
+        <div class="rect">
+            <div class="img"><img src="images/Penguins.jpg" height="300"></div>
+            <div class="box">
+                <div class="title">Segment Title</div>
+                <div class="text">국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다. 모든 국민의 재산권은 보장된다. 그 내용과 한계는 법률로 정한다. 대법관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다.</div>
+            </div>
+            <div class="button">BUTTON</div>
+        </div>
+       
+        <!--두번째 rect-->
+        <div class="rect">
+            <div class="img"><img src="images/Lighthouse.jpg" height="300"></div>
+            <div class="box">
+                <div class="title">Segment Title</div>
+                <div class="text">국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다. 모든 국민의 재산권은 보장된다. 그 내용과 한계는 법률로 정한다. 대법관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다.</div>
+            </div>
+            <div class="button">BUTTON</div>
+        </div>
+       
+        <!--세번째 rect-->
+        <div class="rect" style="margin-right:0px;">
+            <div class="img"><img src="images/dog.jpg" height="300"></div>
+            <div class="box">
+                <div class="title">Segment Title</div>
+                <div class="text">국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다. 모든 국민의 재산권은 보장된다. 그 내용과 한계는 법률로 정한다. 대법관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다.</div>
+            </div>
+            <div class="button">BUTTON</div>
+        </div>
+    </div>
+</div>    
+</body>
+</html>

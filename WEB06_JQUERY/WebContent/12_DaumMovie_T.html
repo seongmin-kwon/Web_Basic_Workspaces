@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>12_DaumMovie.html</title>
+
+<style type="text/css">
+
+    body{margin:0px; overflow-x: hidden;}
+
+    
+
+    #base{position:relative; width:100%; height:360px; background:#292929; margin-top:50px;padding-top:20px}
+
+    
+
+    #all-view{position:relative; width:1212px; height:340px; border:1px dashed green; margin:0 auto;}
+
+    
+
+    #view{position:relative; width:1100px; height:340px; border:1px dashed white; margin:0 auto; float:left; overflow: hidden;}
+
+    
+
+    #movies{position:absolute; left:0; top:0; width:3700px; height:340px; border:1px solid red;}
+
+    
+
+    .movie{position:relative; float:left; width:177px; height:340px; margin-right:5px; border:1px solid yellow; overflow: hidden;}
+
+    
+
+    #lbtn{position:relative; width:55px; height:55px; margin-top:140px; background-image:url(images/ico_movie_171115.png); background-position:0 -180px; float:left;}
+
+    
+
+    #rbtn{position:relative; width:55px; height:55px; margin-top:140px; background-image:url(images/ico_movie_171115.png); background-position:-60px -180px; float:left;}
+
+    
+
+    .temp{clear:both;}
+
+    .t1{font-size :100%; height:30px; margin-top:10px; float:left; width:125px; margin-left:5px; color:white;}
+
+    .t2{font-size :90%; height:30px; margin-top:10px; float:right; width:40px;color:red;text-align:right;margin-right:5px;}
+
+    .t3{font-size :80%;height:30px;float:left; width:125px; margin-left:5px; color:#748CA4;}
+
+    .t4{font-size :90%; height:30px; float:right; margin-right:5px; width:40px;color:black; text-decoration: underline; text-align:right;  color:white;} 
+
+</style>
+
+<script src="js/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    a = {img:'images/dm1.png', title:'다만 악에서 구...', 
+
+        m1:'★ 7.7', m2:'49.0%'};
+
+    
+
+    // 객체 생성자 함수
+
+    function movie(img, title, m1, m2){
+
+        this.img = img;  this.title = title;
+
+        this.m1 = m1;    this.m2 = m2;
+
+    }
+
+    var Ms = []; // 빈 배열 생성
+
+    // 배열에 객체 생성자를 이용한 객체 추가
+
+    Ms.push(a);
+
+    Ms.push(new movie('images/dm2.png','강철비2: 정상...', '★ 7.5' ,'21.5%'));
+
+    Ms.push(new movie('images/dm3.png','반도', '★ 5.7' ,'6.6%'));
+
+    Ms.push(new movie('images/dm4.png','오케이 마담', '★ 8.6' ,'5.3%'));
+
+    Ms.push(new movie('images/dm5.png','애니멀크래커', '★ 9.9' ,'2.9%'));
+
+    Ms.push(new movie('images/dm6.png','비샤크3: 젤리...', '★ 6.1' ,'0.7%'));
+
+    Ms.push(new movie('images/dm7.png','주식회사 스페...', '★ 5.0' ,'0.5%'));
+
+    Ms.push(new movie('images/dm8.png','에베레스트', '★ 2.0' ,'0.3%'));
+
+    Ms.push(new movie('images/dm9.png','소년시절의 너', '★ 8.4' ,'0.2%'));
+
+    Ms.push(new movie('images/dm10.png','온워드:단 하루...', '★ 8.5' ,'0.2%'));
+
+    Ms.push(new movie('images/dm11.png','밤쉘:세상을 바...', '★ 8.0' ,'0.2%'));
+
+    Ms.push(new movie('images/dm12.png','마티아스와 막심', '★ 7.5' ,'0.2%'));
+
+    Ms.push(new movie('images/dm13.png','지저귀는 새는...', '★ 7.3' ,'0.2%'));
+
+    Ms.push(new movie('images/dm14.png','워터 릴리스', '★ 9.8' ,'0.2%'));
+
+    Ms.push(new movie('images/dm15.png','세인트 주디', '★ 9.4' ,'0.1%'));
+
+    Ms.push(new movie('images/dm16.png','소년 아메드', '★ 7.7' ,'0.1%'));
+
+    Ms.push(new movie('images/dm17.png','위대한 쇼맨', '★ 8.9' ,'0.1%'));
+
+    Ms.push(new movie('images/dm18.png','블루 아워', '★ 7.1' ,'0.1%'));
+
+    Ms.push(new movie('images/dm19.png','카오산 탱고', '★ 6.9' ,'0.1%'));
+
+    Ms.push(new movie('images/dm20.png','킹 오브 프리즘', '★ 6.7' ,'0.1%'));
+
+    
+
+    var s1 = ''
+
+    for(var i=0; i<=19; i++){
+
+        s1 += '<div class="movie">'
+
+        s1 += '<img src="' + Ms[i].img + '">'
+
+        s1 += '<div class="temp"></div>';
+
+        s1 += '<div class="t1">' + Ms[i].title + '</div>';
+
+        s1 += '<div class="t2">' + Ms[i].m1 + '</div>';
+
+        s1 += '<div class="temp"></div>';
+
+        s1 += '<div class="t3">예매율 ' + Ms[i].m2 + '</div>';
+
+        s1 += '<div class="t4">예매</div></div>';
+
+        s1 += '</div>'
+
+    }
+
+    $(function(){ 
+
+        $(s1).appendTo('#movies'); 
+
+    });
+
+    $(function(){ 
+
+        var num=0;
+
+        // $('#lbtn').click( function(){ } );
+
+        $('#lbtn').click( function(){
+
+            if( num == 0 ) return;
+
+            else num--;
+
+            $('#movies').animate( {left: num*184*-1*6} , 500);
+
+        } );
+
+        
+
+        $('#rbtn').click( function(){
+            if(num==2){
+               $('#movies').animate( {left: num*184*-1*7} , 500); 
+                
+            }else{
+
+            if( num == 14 ) return;
+
+            else num++;
+
+            $('#movies').animate( {left: num*184*-1*6} , 500);
+            }
+
+        } );
+        
+
+    });  
+
+</script>
+
+</head>
+
+<body>
+
+<div id="base">
+
+    <div id="all-view">
+
+    <div id="lbtn"></div>
+
+        <div id="view">
+
+            <div id="movies"></div>
+
+        </div>
+
+    <div id="rbtn"></div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

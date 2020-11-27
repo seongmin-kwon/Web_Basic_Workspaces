@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Founction_04</title>
+    <script type="text/javascript">
+//함수 하면 항상 매개변수와 리턴값을 잘 이해해야함.
+   function f(x){
+       return x*x;
+   }
+        var y =f(3);
+        alert(y);
+        //자바스크립트의 함수에 사용되는 전달인수의 전달은 자바 문법과 동일합니다.
+        //매개변수는 변수의 선언 없이 괄호안에 넣어서 전달인수 만큼 생성합니다.
+        //성생되어 있는 매개변수보다 전달인수의 갯수가 많으면 해당 전달인수는 무시됩니다.
+        /*4.매개변수*/
+        alert('원래 정의된 매개변수','추가된 매개변수');
+        //두번째 매개변수는 무시한다.
+        function f(x){
+            return x*x;
+        }
+        var y =f(5,3);// 두번째 매개변수(전달인수)는 무시한다.
+        alert(y);
+        
+        
+        //매개변수 불일치 사용 예
+        //Array()함수는 기본적으로 매개변수에 아무것도 입력하지 않게 정의됨.
+        var array1=Array();// 배열
+        var array2=Array(10);//매개변수만큼의 크기를 가지는 배열을 만듦.
+        var array3=Array(25,35,45,55);//매개변수를 배열로 만듦.
+        alert(array1 +"\n"+array2+"\n"+array3);
+        /*new 가없으니 자바의 생성자와 는 다르다 이렇게도 사용된다는것을 알아두자.
+        자바의 가변인자도 있다.이말이야 ...*/
+        
+        /*가변인자 함수 */
+        /*
+        -매개변수의 개수가 변할 수 있는 함수 
+        -자바스크립트는 매변수의 개수를 정의된 것과 다르게 사용해도괜찮았지만,매개변수 선언된 형태와 다르게 사용 했을때고 매개변수를 모두활용하는 함수를 뜻함.
+        
+        
+        */
+        
+        
+        //1.argments변수 사용 예제
+        function sumAll(){
+            alert(typeof(arguments)+':'+argments.length);
+            var s="";
+            for(var i in arguments){
+                s=s+arguments[i]+"";
+            }
+            alert(s);
+        }
+        
+        sumAll(1,2,3,4,5,6,7,8,9);
+        
+        //2.입력 매개변수를 모두 더해 리턴하는 함수
+        function sumAll(x){
+            var willReturn = 0;
+            alert(x);
+            for(var i  in arguments){
+                willReturn +=arguments[i];
+                alert(arguments[i]);
+                
+            }
+            return willReturn;
+        }
+        alter(sumAll(1,2,3,4,5));
+        
+        
+        /*리턴 값*/
+        function returnTest(){
+            alert('문장A');
+            return function(){
+                alert('문장 8'); // 이렇게 함수를 반환 하기도 하는구나
+                
+            }
+            var value = returnTest();
+            alert(typeof(value)+':'+value);
+            value();
+            
+        }
+        
+        
+        
+        /*함수를 매개변수로 받는 함수*/
+        //1. 익명함수를 매개변수로 전달
+        function callFunctionTimes(otherFunction){
+            for(var i=0; i<5; i++){
+                otherFunction();
+                
+            }
+        }
+        callFuctionTimes(
+        function(){alert('hello javaScript..!');}
+        );
+        
+        
+        //2.선언적 함수를 매개변수로 전달
+           function callFunctionTimes(otherFunction){
+            for(var i=0; i<5; i++){
+                otherFunction();
+                
+            }
+        }
+        function justFunction(){
+            alert('hello javascript2')
+        }
+          callFuctionTimes(justFunction);
+        
+        /*함수를 리턴하는 함수와 클로저*/
+        //익명함수를 리턴하는 함수
+        Function outerFunction(){
+            return function(){alert('hello javascript...');};
+        }
+        var func= outerFunction();
+        func();
+        outerFunction()();//익명함수를 리턴하는 함수를 호출하고 뒤에 (붙여서 리턴된 함수가 호출되게 합니다.)
+        // var func= outerFunction();func();  ==outerFunction()(); 같은 의미한사실!
+        
+        //2. 지역변수의 유효범위
+        function test(name){
+            var output = 'hello'+name+'..!';
+            return output;
+            //output은 이 함수 안에서만 살아있다.
+        }
+        alert(test('홍길동'));
+        //alert(output); // error발생
+        var s = test('홍길동');
+        alert(s);
+        
+        //3.클로저(closure)
+        /*지역변수의 값을 살리고 활용하기 위해 리턴되는 함수의 리턴ㄱ밧으로 활용
+        리턴값 외에 함수 실행후 없어지는 지역 변수 값을 활용하기 위한 방법
+        */
+        
+        function outerFunction(name){
+            var output='Hello'+name+'..!';
+            return function(){return output;}
+        }
+        var first = outputFunction('이순신');
+        alert(first());
+        
+</script>
+</head>
+<body>
+   
+    
+</body>
+</html>

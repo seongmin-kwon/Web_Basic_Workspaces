@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+/*
+         <input 요소의 선택자 종류>
+         :button	type 속성값이 "button"인 요소를 모두 선택함.
+         :checkbox	type 속성값이 "checkbox"인 요소를 모두 선택함.
+         :file	type 속성값이 "file"인 요소를 모두 선택함.
+         :image	type 속성값이 "image"인 요소를 모두 선택함.
+         :password	type 속성값이 "password"인 요소를 모두 선택함.
+         :radio	type 속성값이 "radio"인 요소를 모두 선택함.
+         :reset	type 속성값이 "reset"인 요소를 모두 선택함.
+         :submit	type 속성값이 "submit"인 요소를 모두 선택함.
+         :text	type 속성값이 "text"인 요소를 모두 선택함.
+         :input	<input>, <textarea>, <select>, <button>요소를 모두 선택함.
+         :checked	type 속성값이 "checkbox" 또는 "radio"인 요소 중에서 체크되어 있  는 요소를 모두 선택함.
+         :selected	<option>요소 중에서 선택된 요소를 모두 선택함.
+         :focus	현재 포커스가 가지고 있는 요소를 선택함.
+         :disabled	비활성화되어있는 요소를 모두 선택함.
+         :enabled	활성화되어있는 요소를 모두 선택함.       
+  */       
+        $(function() {
+			$("button").on("click", function() {
+				// 체크되어 있는 요소를 모두 선택함.
+				$(":checked").next().text("체크되어 있는 요소는 이 요소입니다.");
+			});
+		});
+	</script>
+		
+          
+</head>
+<body>
+
+
+	<h1>Form 요소의 선택</h1>
+
+	<form>
+		<input type="checkbox" name="lecture" value="html"> <span>HTML</span> <br>
+		<input type="checkbox" name="lecture" value="css"> <span>CSS</span> <br>
+		<input type="checkbox" name="lecture" value="javascript"> <span>자바스크립트</span> <br>
+		<input type="checkbox" name="lecture" value="jquery" checked> <span>제이쿼리</span>
+	</form>
+	<button>필터링</button>
+	
+</body>
+</html>

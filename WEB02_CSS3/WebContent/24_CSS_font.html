@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+   --폰트 속성 :글자와 관련된 스타일 속성
+   1.font-size속성
+   -글자의 크기를 지정하는 스타일 속성. 참고) h1태그:32px, p태그:16px
+   2.font-family 속성
+   -폰트를 지정하는 스타일 속성
+   -일반적을 한 단어로 이루어진 폰트는 따옴표를 사용하지 않음. 하지만 두 단어 이상으로 이루어진 단어는 따옴표를 반드시 적용
+   3.font-style 속성
+   -폰트의 기울기 지정하는 스타일 속성. 키워드: italic 등
+   4.font-weight속성
+   -폰트 두께를 지정하는 스타일 속성.
+   -키워드:700/800/900/bold..
+   -일반 폰트 두께:400, 두꺼운 폰트 두께:700
+   -두께를 지원하지 않는 폰트는 font-weight 속성을 사용해 두께를 조정할 수 없다.
+   5.line-height(줄높이) 속성
+   -글자의 높이를 지정, 글자를 수직 중앙 정렬할 떄 사용. div height와 같은 값을 주면 가운데 정렬이됨!
+   
+   6.text-alingn 속성: 글자의 정렬과 관련된 스타일 속성. 왼쪽,오른쪽,가운데 정렬에 사용
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .font_arial{font-family: Arial,sans-serif;}
+         .font_roman{font-family: 'Times New Roman',serif;}
+         .font_roman{font-family: 굴림;}
+        
+        .font_big{font-size:2pm;}
+        .font_italic{font-style:italic;}
+        .font_bold{font-weight:bold;}
+        
+        a{font-weight: bold; text-decoration: none; color:white;}
+/*  글자크기는 굵게 text-decoration: none;텍스트의 꾸밈 없음, 밑줄등ㅇ의 스타일을 다 제거해줌.      */
+/*sans-serif 대체 폰트 넣기 만약없다면        */
+        .button{
+            width:170px; height:80px; background: red; border:10px solid white; text-align:center; line-height:80px  font-size:200%;box-shadow: 5px 5px 5px #888888;
+            
+            text-shadow: 2px 2px 2px #333333; border-radius: 30px; color:white; font-weight: bold;
+        
+        } 
+/*      그림자 효과 box-shadow: 5px 5px 5px; 16진수 */
+/*        박스 쉐도우: 박의에 그림자 효과 넣기 첫번째값:좌우 그림자 크기, 두번째 값:상하 그림자 크기, 세번째 값: 번짐의 정도, 네번쨰 값: 그림자의 색깔  , 쉐도우 효과는 박스 말고 text에도 같은 방법으러 넣을 수 있습니다.
+        
+        */
+        
+        input[type=button]{ width:170px; height:80px; background: red; border:10px solid white; text-align:center;  font-size:200%;box-shadow: 5px 5px 5px #888888;
+            
+            text-shadow: 2px 2px 2px #333333; border-radius: 30px; color:white; font-weight: bold;}
+    </style>
+</head>
+<body>
+   <h1 class="font_arial">test</h1>
+    <p class="font_roman">test</p>
+    <h1 class="font_gulim">test</h1>
+    <p class="font_italic font_big font_bold">test</p>
+<!--css로 버튼생성-->
+<div class="button"><a href="#">click</a></div>
+<br/>
+<hr />
+<input type="button" value="click"/>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .prod_list {list-style:none; margin:0; padding:0;}
+        .prod_list li {position:relative; float:left; width:300px; height:200px; margin:10px;  overflow:hidden;}
+        .caption {position:absolute; width:300px; height:200px; background:black; opacity: 0.3; top:200px; transition:1s;}
+        .caption h1, .caption p {color:white; text-align:center;}
+    </style>
+    <script type="text/javascript">
+        function translate_div(id) {
+            document.getElementById(id).style.webkitTransform='translateY(-200px)';
+            document.getElementById(id).style.opacity='0.7';
+        }
+        function back_div(id) {
+            document.getElementById(id).style.webkitTransform='translateY(200px)';
+            document.getElementById(id).style.opacity='0.3';
+        }
+    </script>
+</head>
+<body>
+<ul class="prod_list">
+    <li>
+        <img src="images/prod1.jpg" onmouseover="translate_div('caption1');" onmouseout="back_div('caption1');">
+        <div class="caption" id="caption1">
+            <h1>상품1</h1>
+            <p>상품1: 설명텍스트</p>
+            <p>가격:12,345원</p>            
+        </div>
+    </li>
+    <li>
+        <img src="images/prod2.jpg" onmouseover="translate_div('caption2');" onmouseout="back_div('caption2');">
+        <div class="caption" id="caption2">
+            <h1>상품2</h1>
+            <p>상품2: 설명텍스트</p>
+            <p>가격:12,345원</p>            
+        </div>
+    </li>
+    <li>
+        <img src="images/prod3.jpg" onmouseover="translate_div('caption3');" onmouseout="back_div('caption3');">
+        <div class="caption" id="caption3">
+            <h1>상품3</h1>
+            <p>상품3: 설명텍스트</p>
+            <p>가격:12,345원</p>            
+        </div>
+    </li>
+</ul>
+</body>
+</html>

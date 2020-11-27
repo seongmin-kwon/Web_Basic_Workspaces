@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Document</title>
+
+<style type="text/css">
+
+    /* Google Web Font */
+
+    @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+    
+
+    /* Fontawesome 4.7 */
+
+    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    
+
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+    
+
+    body { /*font-family: 'Raleway', sans-serif;*/ color: #222; line-height: 1.5em; font-weight: 300; background-color: royalblue; margin: 0;   font-family: 'Rubik', sans-serif;}
+
+ 
+    a { color: #222; text-decoration: none; }
+    .gnb { position: absolute; top: 50%; transform: translateY(-50%); left: 50px;}
+    .gnb a {display: block; font-size: 40px; margin: 30px 0;
+      color: #fff; transition: 0.5s;
+    }
+</style>
+<script src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+
+    
+    $('a').on('mouseenter', function(){ 
+         for(var i=0; i<=4; i++){
+            var k = $(this).index();
+            if(i==k)$('a').eq(i).css({'opacity':'1'});
+            else $('a').eq(i).css({'opacity':'0.3'});
+         }
+    } );
+});
+</script>
+</head>
+<body>
+<div class="gnb">
+    <a href="#none">New Arrivals</a>
+    <a href="#none">Summer Collection</a>
+    <a href="#none">Winter Collection</a>
+    <a href="#none">Special Offers</a>
+    <a href="#none">Trends</a>
+ </div>    
+</body>
+</html>

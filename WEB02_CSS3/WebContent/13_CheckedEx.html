@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+상태선택자중 checked 실습해보자!
+-입력 양식의 상태를 선택할 때 사용하는 선택자.
+-종류
+    . :enabled
+    . :disabled
+    . :focus
+    . :checked
+    
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width;650px;
+            height:300px;
+            background:silver;
+            transition-delay: 2s;
+            overflow:hidden;
+            /*넘치는거 안보이게 해주세요*/
+            }
+        /*에트리뷰트선택자 로 선택후 input 바로뒤의 div에 이를 적용하겠다*/
+        input[type=checkbox]:checked+div{height:0px;}
+    </style>
+</head>
+<body>
+    <input type="checkbox"/>체크하면아래 텍스트가 사라집니다.
+    <div>
+        
+   <h1>korean times</h1>
+    <p>
+    국회는 상호원조 또는 안전보장에 관한 조약,
+     중요한 국제조직에 관한 조약, 우호통상항해조약,<br> 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.<br>
+    대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다. 민주평화통일자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.<br> 모든 국민은 언론·출판의 자유와 집회·결사의 자유를 가진다.
+    </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>selectTag</title>
+    <!--카카오 로그인 과제에서 드롭다운 전화번호에 나라는없이 선택되도록 하는거 수행-->
+    <style type="text/css">
+        #base{
+            position: relative;
+            width: 500px;
+            height: 600px;
+            border: 1px solid black;
+        }
+        #title{
+            position: relative;
+            width: 100px;
+            height: 30px;
+            border: 1px solid silver;
+            left:100px;
+            top:50px;
+            line-height: 30px;
+            font-size: 120%;
+            font-weight: bold;
+            
+        }
+        #num{
+            float: left;
+            width:80px;
+            height: 30px;
+        }
+        #arrow{
+            float:right;
+            width: 20px;
+            height: 30px;
+            background-image:url(images/ico_movie_171115.png);
+            background-position: -280px -320px;
+        }
+        #dropmenu{
+            position:absolute;
+            width: 200px;
+            height: 250px;
+            top:82px;
+            left:100px;
+            border:1px solid silver;
+            box-shadow: 2px 2px 5px gray;
+            overflow: scroll;
+        }
+        #dropmenu div{
+            font-weight: bold;
+            height: 45px;
+            line-height: 45px;
+        }
+
+    </style>
+   
+    <script type="text/javascript">
+        var now=1;
+        
+       
+        //선생님 팁:now 값을 잘 맞춰보자.
+        function show(){
+            if(now==1){
+                document.getElementById("dropmenu").style.display ='block';
+                now=0;
+            }
+                
+            else{
+                document.getElementById("dropmenu").style.display ='none'; //숨기기
+                now=1;
+            }
+    }
+   
+       function hoverIn(x){
+           document.getElementById(x+"").style.backgroundColor='gray';
+           document.getElementById(x+"").style.color='black';
+           now=0;
+       }
+        function hoverOut(x){
+           document.getElementById(x+"").style.backgroundColor='white';
+           document.getElementById(x+"").style.color='black';
+            now=0;
+       }
+        
+         function choiceDom(x){
+            //문서 객체를 가져온다.
+            document.getElementById("num").innerHTML= '+'+x;
+            document.getElementById("dropmenu").style.visibility='hidden';
+            now=0;
+            
+         }
+           
+            
+    </script>
+    
+</head>
+<body>
+    <div id="base">
+       <div id ="title">
+        <div id="num">+82</div>
+        <div id="arrow" onclick=show();></div>
+    </div>
+    <div id="dropmenu"  style="display: none">
+        <div id="0" onmouseover="hoverIn(0);" onmouseout="hoverOut(0);" onclick="choiceDom(23);">+1&nbsp;&nbsp;&nbsp;캐나다</div>
+        <div id="1" onmouseover="hoverIn(1);" onmouseout="hoverOut(1);" onclick="choiceDom(32);">+2&nbsp;&nbsp;&nbsp;미국</div>
+        <div id="2" onmouseover="hoverIn(2);" onmouseout="hoverOut(2);" onclick="choiceDom(23);">+3&nbsp;&nbsp;&nbsp;인도네시아</div>
+        <div id="3" onmouseover="hoverIn(3);" onmouseout="hoverOut(3);" onclick="choiceDom(233);">+4&nbsp;&nbsp;&nbsp;베트남</div>
+        <div id="4" onmouseover="hoverIn(4);" onmouseout="hoverOut(4);" onclick="choiceDom(32);">+5&nbsp;&nbsp;&nbsp;브라질</div>
+        <div id="5" onmouseover="hoverIn(5);" onmouseout="hoverOut(5);" onclick="choiceDom(23);">+6&nbsp;&nbsp;&nbsp;차이나</div>
+        <div id="7" onmouseover="hoverIn(7);" onmouseout="hoverOut(7);" onclick="choiceDom(63);">+82&nbsp;&nbsp;&nbsp;한국</div>
+        
+        
+    </div>
+    </div>
+</body>
+</html>

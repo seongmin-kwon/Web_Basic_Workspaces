@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+    *그레이디언트(gradient)  = 그라데이션
+    - 2가지 이상의 색상을 혼합한 색을 만들어 채색하는 기능.
+    - http://www.colorzilla.com/gradient-editor/
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26_gradiant.html</title>
+    <style type="text/css">
+        .gradient{
+            height:60px;
+            line-height:60px;
+            text-align: center;
+            background: -webkit-linear-gradient(left,#f90a02 0%,#effc02 49%,#14ad03 100%);
+            /*-webkit-: 기초 웹 디자인 모듈* 왼쪽 빨강0% 중간 노랑49퍼 오른쪽 녹색 100% */
+            
+        }
+         .test{
+              /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cb60b3+0,ad1283+52,de47ac+100 */
+background: #cb60b3; /* Old browsers */
+background: -moz-linear-gradient(top,  #cb60b3 0%, #ad1283 52%, #de47ac 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #cb60b3 0%,#ad1283 52%,#de47ac 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #cb60b3 0%,#ad1283 52%,#de47ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#de47ac',GradientType=0 ); /* IE6-9 */
+
+                
+            }
+                
+    </style>
+</head>
+<body>
+    <div class="gradient">
+        <h1>CSS3 Gradient demo</h1>
+        <p >아래 주소를 클릭 하시면 이동합니다.<br></p>
+        <a href= https://www.colorzilla.com/gradient-editor/>www.colorzilla.com/gradient-editor
+        <h1 class="text">test Gradient demo</h1>
+    </div>
+</body>
+</html>

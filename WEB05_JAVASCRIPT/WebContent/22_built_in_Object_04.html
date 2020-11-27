@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bulit_in_Object_01</title>
+    <script type="text/javascript">
+    /*수학 Math객체*/
+      // Math.abs(숫자) - 숫자의 절대값을 반환
+      // Math.max(숫자1, 숫자2, 숫자3, 숫자4) - 숫자들 중 가장 큰값을 반환
+        // Math.min(숫자1, 숫자2, 숫자3, 숫자4) - 숫자들 중 가장 작은값을 반환
+        // Math.pow(숫자, 제곱값) - 숫자의 거듭제곱 값을 반환
+        // Math.random() - 0~1 사이의 난수를 반환
+        // Math.round(숫자) - 소수점 첫째자리에서 반올림하여 정수를 반환
+        // Math.ceil(숫자) - 소수점 첫째자리에서 올림하여 정수를 반환
+        // Math.floor(숫자) - 소수점 첫째자리에서 내림하여 정수를 반환
+        // Math.sqrt(숫자) - 숫자의 제곱근값을 반환
+        // Math.PI - 원주율 상수 반환
+
+        /*
+        var num=2.1234;
+        var maxNum= Math.max(10,5,8,30);
+        var minNum= Math.min(10,5,8,30);
+        var roundNum = Math.round(num);
+        var floorNum=Math.ceil(num);
+        var rndNum =Math.random();
+        var piNum = Math.PI;
+        Document.write("num=",num,"<br>");
+        Document.write("numValues= 10, 5, 8, 30",num,"<br>");
+        Document.write("maxNum=",maxNum,"<br>");
+        Document.write("minNum=",minNum,"<br>");
+        Document.write("roundNum=",roundNum,"<br>");
+        Document.write("floorNum=",floorNum,"<br>");
+        Document.write("rndNum=",rndNum,"<br>");
+        Document.write("piNum=",piNum,"<br>");
+       /*가위 바위보 게임 만들기*/
+    document.write("<h1>컴퓨터 가위,바위,보 게임</h1>");
+        var game = prompt("가위,바위,보중 선택하세요","가위");
+        var game = prompt("가위,바위,보 중 선택하세요?", "가위");
+        
+        var gameNum;
+        switch(game){
+                case:"가위":gameNum = 1; break;
+                case:"가위":gameNum = 2; break;
+                case:"가위":gameNum = 3; break;
+            default:alert("잘못 작성하셧습니다."); location.reload();
+                //location.reload(); 는 잘못된 작성시 페이지를 다시 로딩해 반복문과같은 효과 줍니다.
+        }
+        
+        var com =Math.ceil(Math.random()*3);
+        //ceil은 소수점 값을 1,2,3과 같이 만들어줍니다. random()은 실수로 나옵니다.
+        
+        document.write("컴퓨터:<br>");
+        document.write('<img src ="images/math_img_'+com+'.jpg'>");
+        document.write("사용자:<br>");
+         document.write('<img src ="images/math_img_'+getNum+'.jpg'>");
+        document.write("<h1>");
+        
+        if(com==1 && gameNum==2)document.write("<br>이겼습니다.");
+        else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+         else if(com==1 && gameNum==3) document.write("<br>졌습니다.");
+        
+        //자바스크립트의 함수는 하나의 자료형이므로 변수에 저장 가능합니다.
+        //-따라서 Math 객체의 메서드를 변수에 저장해서 함수 처럼 쉽게 사용할수 있습니다.
+        var findMax = Math.max;
+        alert(findMax(52,273,103,57));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

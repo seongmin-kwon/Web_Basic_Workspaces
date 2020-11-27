@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 기초</title>
+<style type="text/css">
+    /*스타일시트의 주석문 기호*/
+</style>
+<script type="text/javascript">
+    /*자바스크립트의 주석문 기호*/
+    //자바처럼 단일행 주석도 가능.
+    /*출력1  alert() 경고 알람창으로 해당 문자열 출력*/
+    alert("Hello,Javascript");
+   /*
+   자료형(DataType)
+   1.문자자료형: 
+   -Java와 달리 javascript의 문자 자료형은 작은 따옴표('')와 큰따옴표("")
+   를 모두 문자 자료로 사용합니다. (char, String의 구분이없다.)
+   -정리하면 작은따옴표, 큰따옴표 구분없이 묶어 사용하되 다만! 그둘을 혼용해서 사용할 수 없다.
+   - 예시("javascript'(x)),만약 둘을 혼용해서 사용할경우는 문자열 자료안에 인용구문을 넣어야 할때 혼용하여 사용하는 경우 입니다.예시("he said 'jack'is good guy"(o))
+   -큰따옴표나 작은따옴표로만 인용구문을 표기하고 싶다면 이스테이프 문자 \를 사용한다.
+   예시("hello \"javascript\" ...")
+   */
+    
+    alert('Hello,Javascript\n작은 따옴표');
+    alert("Hello,Javascript\n큰 따옴표");
+    alert('Hello,"Javascript"\n혼합 사용1');
+    alert("Hello,'Javascript'\n혼합 사용2");
+    alert("Hello,\"Javascript\"\n 이스케이프 문자의 사용");
+    
+    /*
+    2.숫자형자료형:
+    -Javascript의 숫자자료는 정수와 실수만 구분하고, 이외의 요소들은 구분없이 사용합니다. 통틀어서 숫자자료라고 명칭합니다.
+    */
+    alert(273);
+    alert(3.141592);
+    
+    /*
+    3.산술 연산자:+ - * % / 
+    -일반적인 산술연산자는 똑같이 사용됩니다. 다만 정수와 정수끼리 나눗셈연산이 정수결과가 나오는것이아니라 실수 결과 즉 타입이 실수로 출력되는것만 다릅니다.
+   */
+    alert('27+35='+(27+35));
+    alert('57-35='+(57+35));
+    alert('27*35='+(27*35));
+    alert('100/5='+(100/5)); //자바의 연산과 결과의 차이 확인 가능
+    alert('100%15='+(100%15));
+    
+  
+    /*
+    4.비교 연산자: <, >, <=, >=, ==, !=
+    5.논리 연산자: &&, ||, !
+    */
+    alert('52>135 && 45<78 =>'+(52>135 && 45<78);
+    //52가 135보타 크면서,45가 78보다 작다 -> False
+    alert('52>135 || 45 < 78 =>'+(52>135 && 45<78));
+    //52가 135보타 크거나,45가 78 보다 작다 -> True
+    alert('!(52>135)=>'+!(52>135));
+    //52가 135보다 크지않다. ->True
+    
+    /*
+    5.변수
+    -자바스크립스의 변수 선언!
+    var a =10;
+    -모든 변수는 var이라는 선언명령을 통해 생성합니다.
+    -변수의 자료형은 현재 저장되어있는 자료형에 따라 바뀝니다.
+    -a변수에 10이라는 값을 저장해서 정수형 변수가 되어 있다가도,이후에 123.123.이라는 값은 a변수에 대입하면 a변수는 실수형이 됩니다.
+    -변수는 1개 이지만 자료형을 바꿔가며 재활용이 가능합니다.
+    */
+    
+    var radius = 10; //정수
+    var pi =3.14; //실수
+    alert(pi);// 원의 둘레의 길이
+    var varChar="hello world";//문자
+    var booleanType =true; //boolean
+    pi = "파이라는 문자열"; 
+    alert(pi);
+    alert(2*pi*radius);// 문자와 숫자자료의 산술연산의 결과는 Nan
+    /*Nan 숫자의 null 구할수 없는값(잘못된 결과 값) 문자는 nan대신 null, */
+    
+    var functionVar = function(){} // 변수에 함수 저장가능
+    //자바스크립트 변수는 함수도 저장가능합니다.
+    //자바스크립트는 형소 사용하는 함수가 자바의 static 함수(매서드)이며 생성후 자유롭게 호출하여 사용합니다. 또한 다음과 같이 만들어지는 함수는 변수에 담아서 사용하기도 합니다.
+    
+/*
+자바스크립트에도 객체가 존재합니다.
+하나의 변수안에 여러 속성(멤버변수 & 멤버 메서드 생성후)들을
+넣고 객체 지향 프로그래밍을 할 수 있습니다.
+var objectVar ={}; //객체
+*/
+    var value=20;
+    value-="world";
+    
+    alert(value);// nan(Not a Number)
+    
+    /*8. 증감연산자*/
+    var number=10;
+    alert(++number +5);// 값 10 에서 11로 변경후 +5
+    alert(--number +5);// 값 11 에서 10으로 변경후 +5연산 실행
+    
+    alert(number++ +5);//값 10에 +5 연산후 10에 서 11로변경
+    alert(number-- +5);//값 11에 +5 연산 실행후 11에서 10으로 변경
+    
+    
+    
+    /*
+    9.변수의 특징과 변수들간의 연산
+    -변수는 가장 마지막에 대입한 값을 기억합니다.
+    -문자들간의 +연산은 이어붙이기 연산입니다.
+    -문자와 숫자간의 +연산도 이어붙이기 연산이 되어 최종 문자결과 가 만들어집니다.
+    */
+    
+    var cup="Coffee";
+    cup= "Green Tea";
+    cup='water';
+    alert('Drink'+cup+'.....!!!');
+    
+    var number =10;
+    alert('숫자 값:' +number);
+    
+   
+    
+    
+    
+    
+    /*10. 자료형의 검사 typeof()*/
+    //문자열
+    alert(typeof('홍길동')); // string,char 자료 모두 string으로 통합.
+    //숫자
+    alert(typeof(150));//number 정수,실수 모두 number로 통합
+    alert(typeof(3.14));//number 정수,실수 모두 number로 통합
+    //boolean
+    alert(typeof(true));
+    //함수
+    alert(typeof(function(){})); //function
+    //객체
+    alert(typeof({})); //object
+    alert(typeof(number));//undefined 변수의 선언없이 자료형이 아직결정전이란 의미,만들고 1번도 않썻단 의미도 있다.
+    number2='123'; //자바스크립트는 특별한 변수 선언 없이 변수 사용이 가능합니다.
+    //가능한한 변수는 선언 후 사용하는것을 권장., 자연스럽게 전역변수로 저장됨.
+    alert(typeof(number2));//string
+    //가능한한 변수는 선언후 사용하는것을 권장
+    
+    11. 입력
+    var input= prompt('이름을 입력하세요','두 글자 이상 입력');
+    //괄호안의 첫번쨰 텍스트=상자안에 표시될 안내문
+    //괄호안의 두번쨰 텍스트=입력란에 미리 입력되고 블럭처리되어있을 텍스트 
+    alert(input+'님 반갑습니다');
+    
+    12.boolean 입력받을때 사용하는 함수
+    var bool = confirm('수락하시겠습니까?');
+    //confirm 에서 대답한 버튼 '확인' = 'true', '취소'=false로  전달
+    if(bool){
+        alert('수락하셨군요')
+    }else{
+        alert('거절하셨군요')
+    }
+    
+</script>
+</head>
+<body>
+<!--HTML 주석문 기호-->
+</body>
+</html>

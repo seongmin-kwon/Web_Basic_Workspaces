@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>26_SelectTag.html</title>
+
+<style type="text/css">
+
+    #base{position:relative; width:500px; height:600px; border:1px solid black;} 
+
+    #title{position:absolute; width:100px; height:30px; border:1px solid silver; left:100px; top:50px; line-height:30px; font-size:120%; font-weight:bold;}
+
+    #num{float:left; width:80px;height:30px;}
+
+    #arrow{float:right;width:20px; height:30px; background-image: url(images/ico_movie_171115.png); background-position:-280px -320px;}
+
+    #dropmenu{position:absolute; width:200px; height:250px; top:80px; left:100px; border:1px solid silver; box-shadow:2px 2px 5px gray;  overflow:scroll;}
+
+    #dropmenu div {font-weight:bold; height:45px; line-height:45px;}
+
+    
+
+    #dropmenu div:hover{background:#EBEBEA;}
+
+</style>
+
+<script type="text/javascript">
+/*
+    var Mstate=0;
+
+    function viewMenu(){
+
+  document.getElementById("dropmenu").style.visibility='visible';
+
+        Mstate = 1;
+
+ }
+
+    function hideMenu(){
+
+  document.getElementById("dropmenu").style.visibility='hidden';
+
+        Mstate =0;
+
+ }
+
+    function selectMenu(n){
+
+  document.getElementById("num").innerHTML = '+' + n;
+
+  document.getElementById("dropmenu").style.visibility='hidden';
+
+ }
+
+    function titleClick(){
+
+        if(Mstate==0) viewMenu();
+
+        else hideMenu();
+
+    }*/
+$(function(){
+   $("#arrow").on({
+      click:function(){
+          $("#dropmenu").toggle();
+      }
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="base">
+
+    <div id="title">
+
+        <div id="num">+82</div>
+
+        <div id="arrow"></div>
+
+    </div>
+
+    <div id="dropmenu">
+
+        <div onclick="selectMenu(1)">+1   Cananda</div>
+
+        <div onclick="selectMenu(1)">+1   United States</div>
+
+        <div onclick="selectMenu(63)">+63   Philippines</div>
+
+        <div onclick="selectMenu(62)">+62   Indonesia</div>
+
+        <div onclick="selectMenu(84)">+84   Vietnam</div>
+
+        <div onclick="selectMenu(55)">+55   Brazil</div>
+
+        <div onclick="selectMenu(86">+86   China</div>
+
+        <div onclick="selectMenu(85)">+85   HongKong</div>
+
+        <div onclick="selectMenu(82)">+82   Korea</div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

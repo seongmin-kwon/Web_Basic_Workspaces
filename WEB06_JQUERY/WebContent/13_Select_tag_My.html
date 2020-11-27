@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>26_SelectTag.html</title>
+<style type="text/css">
+    #base{
+        position:relative;
+        width:500px;
+        height:600px;
+        border:1px solid black;
+    } 
+    #title{
+        position:absolute;
+        width:100px;
+        height:30px;
+        border:1px solid silver;
+        left:100px;
+        top:50px;
+        line-height:30px;
+        font-size:120%;
+        font-weight:bold;
+    }
+
+    #num{float:left; width:80px;height:30px;}
+
+    #arrow{
+        float:right;
+        width:20px;
+        height:30px;
+        background-image: url(images/ico_movie_171115.png); background-position:-280px -320px;
+    }
+
+    #dropmenu{
+        position:absolute;
+        width:200px;
+        height:250px; 
+        top:80px; 
+        left:100px;
+        border:1px solid silver;
+        box-shadow:2px 2px 5px gray;
+        overflow:scroll;
+		display: none;
+    }
+
+    #dropmenu div {font-weight:bold; height:45px; line-height:45px;}
+
+</style>
+<script src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    var s = '<div>+82 한국</div><div>+031 중국</div><div>+812 일본</div><div>+021 영국</div><div>+02 호주</div><div>+022 케나다</div>';
+    var t = ['+82','+031','+812','+01','+02','+022'];
+    //선택한 값이  담기게 하는 배열
+	
+$(function(){
+    /*$('#dropmenu').hide();*/
+    $(s).appendTo('#dropmenu');
+    $('#arrow').click(function(){
+        $('#dropmenu').fadeToggle(100);
+    });
+    $('#dropmenu div').hover(
+        function(){$(this).css("background","#EBEBEA");},
+        function(){$(this).css("background","white");}
+    );
+    $('#dropmenu').mouseout(function(){
+        $('#dropmenu').hide();
+    });
+    $('#dropmenu div').mouseover(function(){
+        $('#dropmenu').show();
+    });
+    $('#dropmenu div').click(function(){
+        var ss=$(this).index();
+        $('#num').text(t[ss]);
+        $('#dropmenu').hide();
+    })
+});
+</script>
+</head>
+<body>
+<div id="base">
+    <div id="title" >
+        <div id="num">+82</div>
+        <div id="arrow"></div>
+    </div>
+    <div id="dropmenu">
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <style type="text/css">
+        #base{position: relative; width: 600px; height: 400px; margin: 0 auto; border: 1px dashed black; overflow: hidden;}
+        #view1{position: absolute; width: 600px; height: 400px; left:-600px; top: 0; border: 1px dashed red;  transition: 0.5s; overflow: hidden; opacity: 0;}
+        img{width: 600px;}
+        #view2{position: absolute; width: 600px; height: 400px; left:0px; top: 0; border: 1px dashed red; overflow: hidden; transition: 0.5s; opacity: 0;}
+        #view3{position: absolute; width: 600px; height: 400px; left:600px; top: 0; border: 1px dashed red; overflow: hidden; transition: 0.5s; opacity: 0;}
+        
+        .imgs{position: absolute; width: 600px; height: 400px; left:600px; top: 0; border: 1px dashed red; overflow: hidden; transition: 0.5s; opacity: 0;}    
+            
+        #btn_left{position: absolute; bottom: 0px; left: 0px; width: 55px; height: 55px; background-image: url(images/ico_movie_171115.png); background-position: 0px -120px; }
+        #btn_right{position: absolute; bottom: 0px; right: 0px; width: 55px; height: 55px; background-image: url(images/ico_movie_171115.png); background-position: -60px -120px;}
+        
+    </style>
+    <script type="text/javascript">
+      var num_now =2;
+        var num_left=1;
+        var num_right=3;
+        
+        function move(x){
+            if(x==1)
+                num_now =(num_now==1)? 8: num_now-1;
+            else num_now =(num_now==8)? 1: num_now+1;
+            
+            num_left =(num_now==1)? 8: num_now-1;
+            num_right =(num_now==8)? 1: num_now+1;   
+            
+            var s=" ";
+            for(var i=1; i<=8; i++){
+                s= "view"+i;
+                if(num_now==i)document.getElementById(s).style.opacity="1";
+                else document.getElementById(s).style.opacity="0";
+            }
+            
+            s ="view"+num_now;
+            document.getElementById(s).style.left ="0px";
+            s ="view"+num_left;
+            document.getElementById(s).style.left ="-600px";
+            s ="view"+num_right;
+            document.getElementById(s).style.left ="600px";
+                
+        }
+        setInterval("move(2)", 2000);
+
+
+    </script>
+</head>
+<body>
+    <div id="base">
+        <div id="view1"><img src="images/Koala.jpg"></div>
+        <div id="view2"><img src="images/Penguins.jpg"></div>
+        <div id="view3"><img src="images/Tulips.jpg"></div>
+        <div id="view4" class="imgs"><img src="images/Lighthouse.jpg"></div>
+        <div id="view5" class="imgs"><img src="images/Jellyfish.jpg"></div>
+        <div id="view6" class="imgs"><img src="images/Desert.jpg"></div>
+        <div id="view7" class="imgs"><img src="images/Chrysanthemum.jpg"></div>
+        <div id="view8" class="imgs"><img src="images/Hydrangeas.jpg"></div>
+        
+        <div id ="btn_left" onclick="move(1);"></div>
+        <div id ="btn_right" onclick="move(2);"></div>
+    </div >
+</body>
+</html>

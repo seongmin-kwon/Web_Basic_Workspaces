@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kakao회원가입 ver_04</title>
+</head>
+<style type="text/css">
+    body{margin:0px;}
+/*로고이미지 배경틀*/
+    #logoBk{
+            position: relative;
+            width: 100%;
+            height: 118px;
+            margin:0 auto;
+            line-height: 118px;
+                
+    }
+/*로고이미지 중앙 고정    */
+    #img{
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+/*전체 배경 보더*/
+    #back_bord{
+        position: relative;
+        width: 581px;
+        height: 1000px;
+        margin:0 auto;
+        border:1px solid lightgray;  
+    } 
+/*내용들을 담을 div 틀*/
+    #content{
+        position: relative;
+        width:85%;
+        height: 900px;
+        margin:0 auto;
+        
+        margin-top: 70px;
+        margin-bottom: 70px;     
+    }
+/*입력 안내 문구*/
+    #noticeBack{
+        position: relative;
+        font-size: 140%;
+        margin-bottom: 60px;   
+    }
+/*이메일 div*/
+    #emailBack{
+        position: relative;
+        height:130px;
+        
+        
+    }
+    
+/*이메일 주소입력*/
+    .input{
+        position: relative;
+        float:left;
+        width: 100%;
+        height:50px;
+        border: none;
+        font-size: 100%;
+        border-bottom: 2px solid lightgray;
+        margin-bottom: 20px;
+        color: lightgray;
+        
+    }
+/*   @daum.net*/
+    .span_txt{
+        position: absolute;
+        float:right;
+        right:0px;
+        margin-top: 12px;
+        font-size: 120%;
+        
+    }
+/*  이메일아래 안내문구*/
+    #l01{
+        font-size: 70%;
+        color:black;
+        margin-left: -20px;
+    }
+/*    비밀번호 배경*/
+    #pwBack{
+        margin-top: 10px;
+        position: relative;
+        height:130px;
+        
+        
+    }
+/*    비밀번호 입력 박스*/
+    .pw{
+         position: relative;
+        float:left;
+        width: 100%;
+        height:50px;
+        border: none;
+        font-size: 100%;
+        border-bottom: 2px solid lightgray;
+        margin-bottom: 20px;
+    }
+/*닉네임 배경*/
+    #nickNameBk{
+        margin-top: 10px;
+        position: relative;
+        height:90px;
+        
+    }
+    
+/*    0/20부분*/
+    #al{
+        
+        position: absolute;
+        float:right;
+        right:4px;
+        margin-top: 15px;
+        font-size: 80%;
+        
+    
+    }
+/*   폰 배경*/
+    #phoneBk{
+        margin-top: 10px;
+        position: relative;
+        height:140px;
+       
+    }
+/*    전화 드롭박스*/
+    #ph{
+        position: relative;
+        width: 20%;
+        height: 60px;
+        float:left;
+        border:none;
+        font-size: 120%;
+        border-bottom: 2px solid lightgray;
+    }
+    #phinput{
+        position: absolute;
+        margin-top: 22px;
+        float:left;
+        right:0px;
+        width: 80%;
+        height:50px;
+        border: none;
+        font-size: 100%;
+        border-bottom: 2px solid lightgray;
+        margin-bottom: 20px;
+        color: lightgray;
+        
+    }
+/*   전송 버튼*/
+     #btnSend{
+          position: relative;
+            width: 150px;
+            height: 40px;
+            float:right;
+            right:10px;
+            border:1px solid black;
+            background-color: white;
+            border-radius:100px; 
+            font-size: 90%;
+            padding:2px;
+            font-weight: bold;
+            margin-top: 80px;
+            
+        }
+/* 생일/성별*/
+    #birthBk{
+      
+        position: relative;
+        height:80px;
+        border-bottom: 2px solid lightgray;
+    }
+    .ymd_select{
+        
+        height:50px;
+        border: none;
+        font-size: 100%;
+        margin-right:60px;
+        color: black;
+    }
+/*    성별배경*/
+    #genderBk{
+           position: relative;
+        height:70px;
+        
+    }
+/*  다음 버튼 배경*/
+ #nextBtn{
+        position: relative;
+        height:70px;
+        
+    
+    }
+    .btn{
+        position: absolute;  
+        margin: 0 auto;
+        margin-left:20px;
+        width: 90%;
+        height: 53px;
+        background-color: #F6F6F6;
+        color: black;
+        font-size:100%;
+        font-weight: bold;
+    }
+/*    footer*/
+    #footer{
+        position: relative;
+        margin: 0 auto;
+        width: 30%;
+        height: 50px;
+        
+    }
+    .ft01 ul li{
+        position: relative;
+        float:left;
+        padding-right: 20px;
+        list-style:none;
+        font-size: 80%;
+        font-weight: bold;
+  
+    }
+    .ft01{
+        margin: 0 auto;
+    }
+    
+    #ft02{
+        position: relative;
+        margin:0 auto;
+        text-align: center;
+        font-size: 80%;
+        margin-top: -30px;
+    }
+
+     
+     
+</style>
+<body>
+<!--카카오 이미지 로고-->
+   <div id="logoBk">   <div id="img"><img  src="images/logo.jpg"></div></div>
+<!--입력전체 보더-->   
+   <div id="back_bord">
+<!--안의 내용 보더-->
+       <div id="content">
+          <div id="noticeBack">
+            <Strong >카카오계정 정보를 입력해주세요</Strong>  
+          </div>
+          <div id="emailBack">
+              <div style=font-size:70%;><b>카카오계정 이메일</b></div>
+               <div class="input_div">
+                <input type="text" class="input" placeholder="이메일 주소 입력" style="width:100%" />
+                <span class="span_txt"><Strong>@daum.net</Strong></span>  
+            </div>
+            <div id="l01">
+                   <ul>
+                       <li>카카오계정으로 사용할 Daum이메일을 만들어주세요.</li>
+                       <li>만약 사용중인 Daum메일이 있다면,Daum아이디로 로그인하여 계정을 가입해주세요.</li>
+                   </ul>
+               </div>
+          </div>
+          <div id="pwBack">
+             
+        <div style="font-size:80%; color:gray;"><Strong>비밀번호</Strong></div>
+            <div><input type="text" class="pw" placeholder="비밀번호(8~32자리)"></div>
+            <div><input type="text" class="pw" placeholder="비밀번호 재입력"></div>   
+           </div>   
+         <div id="nickNameBk">
+             
+       <div style="font-size:80%; color:black;"><Strong>닉네임</Strong></div>
+               <div>
+               <input type="text" class="input" placeholder="닉네임을 입력해주세요."><div id="al">0/20</div>
+            </div>       
+         </div>
+          <div id="phoneBk">
+              <div > <select id="ph" name="number">
+                <option value="82">+82</option>
+                <option value="83">+83</option>
+                </select></div>
+              <div><input type="text" id="phinput" placeholder=" | 전화번호"/></div>   
+                <div class="btn_area">
+                    <button type="button" id="btnSend">인증번호 전송</button>
+                </div>
+          </div>
+          <div id="birthBk">
+              <p style="font-size: 70%"><Strong>생일/성별</Strong></p>
+            <div class="div_input">
+                <select name="number" class="ymd_select">
+                    <option value="82">연도</option>
+                    <option value="82">2019</option>
+                    <option value="83">2020</option>
+                </select>
+                <select name="number" class="ymd_select">
+                    <option value="82">월</option>
+                    <option value="83">1</option>
+                </select>
+                <select name="number" class="ymd_select">
+                    <option value="82">일</option>
+                    <option value="83">1</option>
+                </select>
+                <div style="float: right;margin-right: 30px;margin-top: 12px;">
+                    <input type="radio" name="음력" value="음력"/><label>음력</label>
+                    </div> 
+                </div>
+                </div>
+                
+                <div id =genderBk>
+                <div style="margin-top: 10px; ">
+                <input type="radio" name="gender" value="음력"/><label style="margin-right:30px;">선택안함</label>
+                <input type="radio" name="gender" value="음력"/><label style="margin-right:30px;">여성</label>
+                <input type="radio" name="gender" value="음력"/><label style="margin-right:30px;">남성</label>
+            </div>
+                </div>
+           
+          <div id="nextBtn">
+                <input class="btn" type="button" value="다음">
+          </div>
+          
+       </div>
+   </div>
+   
+
+    <div id="footer">
+    <div  class="ft01">
+    <ul>
+        <li> 이용약관</li>
+        <li> 개인정보처리방침</li>
+        <li> 운영정책</li>
+        <li> 고객센터</li>
+        <li> 공지사항</li>
+        <li> <select id="lang" class="sel">
+                                    <option>한국어</option>
+                                    <option value="영어">1</option>
+                                    <option value="일본어">2</option>
+                                    <option value="중국어">3</option>
+                              </select></li>
+    </ul>
+    </div>
+</div>
+<div id="ft02">Copyright © <Strong>Kakao Corp.</Strong> All rights reserved.</div>
+</body>
+</html>

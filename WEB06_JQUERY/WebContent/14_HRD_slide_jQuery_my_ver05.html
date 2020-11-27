@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #layer1{position: relative; width: 100%; height: 145px; border: 1px dashed gray;}
+        .view1{position: relative; width: 1025px; height: 115px; border:1px solid red; margin:0 auto; overflow: hidden; }
+        .view2{position: relative; width: 1025px; height: 30px; border:1px dotted blue; margin:0 auto;}
+        
+         #imgs{position: absolute; width: 9225px; height: 115px; border:1px solid blue; top:0px; left:0px; transition: 0.5s;}
+        
+        .remote{position: relative; width: 240px; height: 20px; border: 1px dotted blue; float: right; margin-top: 4px;}
+        
+        .btns{position: relative;width: 18px; 18px; border: 1px solid black; float: left; font-size: 90%; font-weight: bold; line-height: 18px; text-align: center;}
+        
+        .btns:hover{cursor: default; }
+        
+        
+        body{overflow-x: hidden;}
+    </style>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+	var statusAuto ="on";
+    var num=0;
+    var s = ['images/H1.png','images/H2.png','images/H3.png','images/H4.png','images/H5.png','images/H6.png','images/H7.png','images/H8.png','images/H9.png'];
+    var img ='';
+    var btn='<div class="btns" id="btnleft">◁</div><div class="btns" id="btn1">1</div><div class="btns" id="btn2">2</div><div class="btns" id="btn3">3</div><div class="btns" id="btn4">4</div><div class="btns" id="btn5">5</div><div class="btns" id="btn6">6</div><div class="btns" id="btn7">7</div><div class="btns" id="btn8">8</div><div class="btns" id="btn9">9</div><div class="btns" id="btnright">▷</div><div class="btns" id="btnA">Ⅱ</div>';
+    for(var i=0; i<9; i++){
+        img += '<img src="'+s[i]+'">';
+    }
+        $(function(){
+			/*이미지 배열 넣기*/
+            $(img).appendTo('#imgs');
+			
+			/*버튼 문자열 넣기*/
+            $(btn).appendTo('.remote');
+            $('#btn1').css({background:"black",color:"white"});
+			
+	  		/*베너 슬라이드*/
+            var timer=setInterval(function(){
+                $('.btns').css({background:"white",color:"black"});
+                num++;
+                if(num==9){
+                    num=0;
+                }
+                var move = (-1*1025)*num;
+                $('#imgs').css('left',move);
+                $('#btn'+(num+1)).css({background:"black",color:"white"});
+				
+            },2000);
+			
+			
+		
+		  $('#btnA').click(function(){
+			   if( statusAuto == "on" ){
+            	   statusAuto = "off";
+			$("#btnA").text("▶");
+			  $("#btnA").css("background","white")
+			  $("#btnA").css("color","black")
+			  /*$("#btnA").css("text-align","center");*/
+			  window.clearInterval(timer);
+			  
+	   			   
+        }else{
+            statusAuto = "on";
+            timer = window.setInterval(function(){
+                $('.btns').css({background:"white",color:"black"});
+                num++;
+                if(num==9){
+                    num=0;
+                }
+                var move = (-1*1025)*num;
+                $('#imgs').css('left',move);
+                $('#btn'+(num+1)).css({background:"black",color:"white"});
+				
+            },2000);
+				$("#btnA").text("Ⅱ");
+			  $("#btnA").css("background","white")
+			  $("#btnA").css("color","black")
+			  $("#btnA").css("text-align","center");  
+        }
+		
+	});	
+			
+			$("#btnleft").click(function(){
+				
+				 if(num==0){
+					 alert("첫 페이지 입니다.")
+                    return;
+                }
+				
+				var move = (-1*1025)*num;
+                $('#imgs').css('left',move);
+				$('.btns').css({background:"white",color:"black"});
+                $('#btn'+(num+1)).css({background:"black",color:"white"});
+				num--;
+			});
+			
+			$("#btnright").click(function(){
+				num++;
+				 if(num==9){
+					 alert("마지막 페이지 입니다.")
+                    return;
+                }
+				var move = (-1*1025)*num;
+                $('#imgs').css('left',move);
+				$('.btns').css({background:"white",color:"black"});
+                $('#btn'+(num+1)).css({background:"black",color:"white"});
+				
+			});		
+			
+			$('.btns').click(function(){
+				var idx=$('.btns').index(this); //현재 클릭된 인덱스값
+				//$('.bnum').index(this) .btns중에 몇번째?
+				//$(this).index 부모 요소를 기준으로 몇번째?
+				var k =(-1*1025)*idx;
+				$("#imgs").animate({left:k},500);
+				//버튼도 이동하게 바꾸기
+				$('.btns').css({background:"white",color:"black"});
+                $('.btns').index(this).css({background:"black",color:"white"});
+				
+			});
+			
+			
+});	
+    </script>
+</head>
+<body>
+<div id="layer1">
+    <div class="view1">
+        <div id="imgs"></div>
+    </div>
+    <div class="view2">
+        <div class="remote"></div>
+    </div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #gallery{position: relative; margin: 0 auto; width: 1080px; height: 400px; border: 1px solid red; margin-top: 100px; overflow:hidden}
+        #img_list{position: absolute; top:0px; left:0px; width: 6480px; height: 400px; border: 1px solid blue;}
+        #title1{background: black; width: 1080px; height: 60px; position: absolute; left:0px; bottom: 0px; margin: 0; color: white;}
+        #title2{background: black; width: 1080px; height: 60px; position: absolute; left:0px; bottom: -70px; margin: 0; color: white;}
+        #title3{background: black; width: 1080px; height: 60px; position: absolute; left:0px; bottom: -70px; margin: 0; color: white;}
+        #title4{background: black; width: 1080px; height: 60px; position: absolute; left:0px; bottom: -70px; margin: 0; color: white;}
+        #title5{background: black; width: 1080px; height: 60px; position: absolute; left:0px; bottom: -70px; margin: 0; color: white;}
+        #title6{background: black; width: 1080px; height: 60px; position: absolute; left:0px; bottom: -70px; margin: 0; color: white;}
+        #numbering{
+            position: absolute;
+            float:left;
+            border:1px solid yellow;
+            width: 50px;
+            height:50px;
+            left:1030px;
+        }
+        #numchange{
+             font-size: 150%;
+             font-weight: bold;
+             color:white;
+             margin:0 auto;
+             text-align: center;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+    $(function(){
+        var num=1;
+        var numC=1;
+        var imgs = ['images/Desert.jpg','images/Tulips.jpg','images/Jellyfish.jpg','images/Lighthouse.jpg','images/Chrysanthemum.jpg','images/Koala.jpg'];
+        var s = '';
+        for(var i=0; i<=5; i++){
+            s +='<img src="'+imgs[i]+'"width="1080" height="400">';
+        }
+        $(function(){
+           
+           $(s).appendTo('#img_list');
+       });
+           
+            setInterval(function(){
+                   $('.title').css('bottom',-70);
+                $('img').first().appendTo('#img_list');
+                    num++;
+                $('#title'+num).animate({bottom:0},1000);
+                
+                $('#numchange').text(num+"/6");
+                  if(num==6){
+                        num=0;
+                    }
+                
+                
+            },2000) 
+    });
+       
+    </script>
+</head>
+<body>
+ <div id="gallery">
+     <div id="img_list"></div><!--appendTo를 이용해서 이미지 첨부-->
+     <div id="title1" class="title">
+         <h2>사막</h2>
+         <p>1111111111111111111111111111111111111111111111</p>
+     </div>
+      <div id="title2" class="title">
+         <h2>튤립</h2>
+         <p>111111111111111111111111111111111111111111111111</p>
+     </div>
+      <div id="title3" class="title">
+         <h2>해파리</h2>
+         <p>111111111111111111111111111111111111</p>
+     </div>
+      <div id="title4" class="title">
+         <h2>빛집</h2>
+         <p>22222222222222222222222</p>
+     </div>
+      <div id="title5" class="title">
+         <h2>왕꽃</h2>
+     </div>
+      <div id="title6" class="title">
+         <h2>코알라</h2>
+     </div>
+     <div id="numbering"><div id="numchange">1/6</div></div>
+ </div>   
+</body>
+</html>

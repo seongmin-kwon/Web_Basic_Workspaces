@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>img_control_05</title>
+    <style type="text/css">
+     #base{
+         position:relative;
+         width:600px; 
+         height:400px;
+         margin:0 auto; 
+         border: 1px dashed black;
+         overflow: hidden;
+        
+        }
+        #view{
+            position: absolute;
+            width: 4800px;
+            height: 400px;
+            left:0;
+            top:0;
+            border: 1px dashed red; 
+            transition: 1s;
+        }
+        #remote{
+            position: absolute;
+            width: 200px;
+            border: 1px solid white;
+            height: 90px;
+            margin: 0 auto;
+            left: 200px;
+            bottom: 0px;
+        }
+        img{width: 600px;}
+        .btn{
+            position: relative;
+            float: left;
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+            border-radius: 5px;
+            background: white;
+        }
+    </style>
+ 
+    <script type="text/javascript">
+    function changeImg(n){
+         var k = -1*n*600;
+       document.getElementById("view").style.left=k+"px";
+    
+     }
+    
+    </script>
+</head>
+<body>
+    <div id ="base">
+<div id ="view">
+        <img id="img01" src="images/Koala.jpg"><img id=img03 src="images/Chrysanthemum.jpg"><img id=img04 src="images/Hydrangeas.jpg"><img id=img05 src="images/Jellyfish.jpg"><img id=img06 src="images/Lighthouse.jpg"><img id=img07 src="images/Penguins.jpg"><img id=img08 src="images/Tulips.jpg">    <!--enter 가 영향을 주기 떄문에 이미지 테그는 이어붙혀 준다.-->
+</div>
+
+ <div id="remote">
+        <div class= "btn"onclick="changeImg(0);"></div>
+        <div class= "btn"onclick="changeImg(1);"></div>
+        <div class= "btn"onclick="changeImg(2);"></div>
+        <div class= "btn"onclick="changeImg(3);"></div>
+        <div class= "btn"onclick="changeImg(4);"></div>
+        <div class= "btn"onclick="changeImg(5);"></div>
+        <div class= "btn"onclick="changeImg(6);"></div>
+        <div class= "btn"onclick="changeImg(7);"></div>
+    </div>
+</div>
+</body>
+</html>

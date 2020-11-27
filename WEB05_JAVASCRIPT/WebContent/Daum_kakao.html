@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Daum_kakao_ksm</title>
+    <style type="text/css">
+        #div_login {
+            width: 350px;
+            height: 800px;
+            margin: 0 auto;
+        }
+        
+        #div_box {
+            width: 100%;
+            height: 90%;
+            border: 1px solid lightgray;
+            padding: 50px;
+        }
+        
+        .div_input {
+            width: 100%;
+            height: 30px;
+            border: solid 0px;
+            border-bottom: solid 1px lightgray;
+        }
+        
+        .input {
+            width: 100%;
+            height: 90%;
+            border: solid 0px;
+        }
+        
+        .login_p {
+            font-size: 10px;
+            margin-top: 40px;
+        }
+        
+        .login_p2 {
+            font-size: 8px;
+            color: gray;
+        }
+        
+        .span_txt {
+            float: right; 
+            font-size: 15px;
+        }
+        
+        .btn {
+            float: right;
+            margin: 25px 0;
+            padding: 8px 20px;
+            background-color: white;
+            border: solid 1px lightgray;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .ymd_select {
+            width: 50px;
+            border: solid 0px;
+            margin-right: 35px;
+        }
+        
+        .btn2 {
+            width: 100%;
+            margin: 25px 0;
+                padding: 15px;
+            background-color: lightgray;
+            border: solid 0;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="div_login">
+        <div style="height:10%; width: 100%; padding: 0 50px;">
+            <!--<img src="123/GAM_ERD.png" width="100%" height="100%">-->
+            <h1 align="center">kakao</h1>
+        </div>
+        <div id="div_box">
+            <p style="font-size: 15px;"><b>카카오계정 정보를 입력해주세요</b></p>
+                <p class="login_p"><b>카카오 계정 이메일</b></p>
+            <div class="div_input">
+                <input type="text" class="input" placeholder="이메일 주소 입력" style="width: 75% !important"><input/>
+                <span class="span_txt"><Strong>@daum.net</Strong></span>
+            </div>
+            <p class="login_p2"><b>＊카카오계정으로 사용할 Daum 이메일을 만들어주세요.</b></p>
+            <p class="login_p2"><b>＊만약 사용중인 Daum메일이 있다면, Daum아이디로 로그인하여 계정을 가입해주세요.</b></p>
+                <p class="login_p"><b>비밀번호</b></p>
+            <div class="div_input">
+                <input type="text" class="input" placeholder="비밀번호(8~32자리)"/>
+            </div>
+            <div class="div_input" style="margin-top: 10px;">
+                <input type="text" class="input" placeholder="비밀번호 재입력"/>
+            </div>
+                <p class="login_p"><b>닉네임</b></p>
+            <div class="div_input">
+                <input type="text" class="input" placeholder="닉네임을 입력해주세요." style="width: 75% !important"/>
+                <span class="span_txt">0/20</span>
+            </div>
+            <p class="login_p"><b>전화번호</b></p>
+            <div class="div_input">
+                <select name="number" style="width: 20%; border: solid 0px;">
+                    <option value="82">+82</option>
+                    <option value="83">+83</option>
+                </select>
+                <input type="text" class="input"placeholder="전화번호" style="width: 75% !important"/>   
+            </div>
+            <div style="width: 100%; height: 50px;">
+                <input class="btn" type="button" value="인증번호 전송" onclick="alert('click')">
+            </div>
+            <p class="login_p"><b>생일/성별</b></p>
+            <div class="div_input">
+                <select name="number" class="ymd_select">
+                    <option value="82">연도</option>
+                    <option value="82">2019</option>
+                    <option value="83">2020</option>
+                </select>
+                <select name="number" class="ymd_select">
+                    <option value="82">월</option>
+                    <option value="83">1</option>
+                </select>
+                <select name="number" class="ymd_select">
+                    <option value="82">일</option>
+                    <option value="83">1</option>
+                </select>
+                <div style="float: right;">
+                    <input type="radio" name="음력" value="음력"/><label>음력</label>
+                </div>
+            </div>
+            <div style="margin-top: 10px;">
+                <input type="radio" name="gender" value="음력"/><label style="margin-right:30px;">선택안함</label>
+                <input type="radio" name="gender" value="음력"/><label style="margin-right:30px;">여성</label>
+                <input type="radio" name="gender" value="음력"/><label style="margin-right:30px;">남성</label>
+            </div>
+            <div style="width: 100%; height: 50px;">
+                <input class="btn2" type="button" value="다음" onclick="alert('click')">
+            </div>
+        </div>
+      </div>
+  </body>
+</html>

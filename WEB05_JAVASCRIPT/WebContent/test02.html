@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>요일 출력</title>
+    <script type="text/javascript">
+        
+        /*
+        문제)
+        월과일을 입력 받아 요일을 출력하는 코드 작성.
+        요일은 2020년에 한해서만 계산하되 ,2020년 1월 1일은 수요일 인것을 기준으로 코드를 작성합니다.
+        */
+        
+        
+        prompt("안녕친구들 엔터~");
+        var sumM =0; //합산 날자수
+        var Tday=0;
+        
+        var month= Number(prompt('월을 입력하세요','1~12'));
+        var input= prompt('일을 입력하세요','1~31');
+        var day=Number(input);
+
+    switch (month) {
+    case 1:
+        sumM=0;
+        Tday = (sumM+day)%7;
+        break;
+    case 2:
+        sumM=31;
+        Tday = (sumM+day)%7;
+        break;
+    case 3:
+        sumM=31+29;
+        Tday = (sumM+day)%7;
+        break;
+    case 4:
+        sumM=31+29+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 5:
+        sumM=31+29+31+30;
+        Tday = (sumM+day)%7;
+        break;
+    case 6:
+        sumM=31+29+31+30+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 7:
+        sumM=31+29+31+30+31+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 8:
+        sumM=31+29+31+30+31+31+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 9:
+        sumM=31+29+31+30+31+31+31+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 10:
+        sumM=31+29+31+30+31+31+31+31+30;
+        Tday = (sumM+day)%7;
+        break;
+    case 11:
+        sumM=31+29+31+30+31+31+31+31+30+31;
+        Tday = (sumM+day)%7;
+        break;
+    case 12:
+        sumM=31+29+31+30+31+31+31+31+30+31+30;
+        Tday = (sumM+day)%7;
+        break;
+    }
+    
+    if(Tday==1) {
+       alert("입력한 날자는 2020년 "+month+'월'+day+"일은 수요일 입니다.\n");
+        
+    }
+    if(Tday==2) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 목요일 입니다.\n");
+        
+    }
+    if(Tday==3) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 금요일 입니다.\n");
+        
+    }
+    if(Tday==4) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 토요일 입니다.\n");
+        
+    }
+    if(Tday==5) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 일요일 입니다.\n");
+        
+    }
+    if(Tday==6) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 월요일 입니다.\n");
+        
+    }
+    if(Tday==0) {
+        alert("입력한 날자는 2020년 "+month+'월'+day+"일은 화요일 입니다.\n");
+        
+    }    
+ 
+
+    alert("입력한 날자는 2020년 "+month+'월'+day+"일은 입니다.\n");          
+    
+    </script>
+</head>
+<body>
+</body>
+</html>

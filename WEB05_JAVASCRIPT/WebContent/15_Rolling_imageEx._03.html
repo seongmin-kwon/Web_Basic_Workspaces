@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rolling_image.html</title>
+    <style type="text/css">
+        #a1{position:absolute;
+            width:500px; height:225px; 
+            top:100px; left:100px;}
+    </style>
+    <script type="text/javascript">
+        var aa = 0; //전역변수
+
+        function rotate_div(){
+            
+            aa+=20;
+            if(aa>360)aa=0;
+            document.getElementById("a1").style.webkitTransform ='rotate('+aa+'deg)';
+        }
+        
+        function init(){
+            setInterval("rotate_div()" , 1)
+        }
+       
+    </script>
+</head>
+<!--onload="startRoll()": 스타트 함수 바디에서 1번 실행후 시작-->
+<body onload="init();">
+    <div id='a1' >
+        <img src="images/%EC%B9%98%EB%8F%84%EB%A6%AC.png">
+    </div>
+</body>
+</html>

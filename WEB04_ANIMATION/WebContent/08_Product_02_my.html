@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my</title>
+<!--   형제이거나 자식이어야 움직인다!-->
+    <style type="text/css">
+        #big{
+            position:relative;
+            border:1px solid black;
+            width:606px;
+            height:606px;
+            left:600px;  
+        }
+        #a{
+            position:relative;
+            border:1px solid black;
+            width:606px;
+            height:400px;
+        }
+        .pto{
+            position:relative;
+            float:left;
+            border:1px solid yellow;
+            width:200px;
+            height:200px;
+            
+            
+        }
+        .ptot{
+            position:absolute;
+            width:200px;
+            height:200px;
+            border:1px solid yellow;
+            border-radius: 100px;
+            
+        }
+        #cho{position: relative;
+            width: 606px;
+            
+        }
+        #01:hover #01{
+            transform:translateX(606px);   
+        }
+    </style>
+</head>
+<body>
+  
+    <div id="big">
+        <div id="a"><img id="cho" src="images/prod1.jpg"></div>
+        <div class="pto"><img  class="ptot" id="01" src="images/prod1.jpg"></div>
+        <div class="pto"><img   class="ptot" id="02" src="images/prod2.jpg"></div>
+        <div class="pto"><img   class="ptot" id="03" src="images/prod3.jpg"></div>
+    </div>
+</body>
+</html>

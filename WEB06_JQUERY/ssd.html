@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+<div id="wrap">
+	<h1>내 식당 수정하기</h1>
+	<form name="frm" method="post" action="board_update"  enctype="multipart/form-data">
+	<input type="hidden" name="rqseq" value="${restaurantVO.rqesq}">
+	<table>
+		<tr><th>식당이름</th><td>
+			<input type="text" value="${restaurantVO.rname}" size="12" name="rname"></td></tr>
+		<tr><th>평점</th><td>
+			<input type="text" value="${restaurantVO.rgrade}" size="12" name="rgrade"></td></tr>
+		<tr><th>운영시간</th><td>
+			<input type="text" value="${restaurantVO.rrun_time}" size="12" name="rrun_time"></td></tr>
+		<tr><th>공휴일</th><td>
+			<input type="text" value="${restaurantVO.rday_off}" size="12" name="rday_off"></td></tr>
+		<tr><th>식당 소개</th><td>
+			<input type="text" value="${restaurantVO.rcontent" size="12" name="rcontent"></td></tr>
+		<tr><th>이미지</th><td align="left">
+				<c:choose>
+					<c:when test="${empty restaurantVO.rimage}">
+						<img src="static/admin/upload/noimage.jpg" width="300">
+					</c:when>
+					<c:otherwise>
+						<img src="static/admin/upload/${restaurantVO.rimage}" width="300">
+						<input type="hidden" name="oldimage" value="${board.image}">
+					</c:otherwise>
+				</c:choose><br>
+			<input type="file" name="filename">
+			(주의사항 : 이미지를 변경하고자 할때만 선택하시오)
+		</td></tr>
+	</table><br>
+	<input type="submit" value="수정">
+	<input type="button" value="목록" onclick="location.href='main'">
+	</form>
+</div>
+</body>	
+
+</html>

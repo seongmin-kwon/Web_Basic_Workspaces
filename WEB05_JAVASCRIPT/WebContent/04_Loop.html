@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loop</title>
+     <script type="text/javascript">
+    /*1. while 반복문*/
+    //예제1
+/*    var value=1;
+    var s ="";
+        while(value < 5){
+            alter(value+'번쨰 반복');
+            s=s+value+"번째 반복\n";
+            value++;
+        }
+        alert(s);*/
+    /*2. 예제2- 반복실행 while문 
+    var value=0;
+    var startTime= new Date().getTime();
+    var endTime = startTime +1000;
+        while(new Date().getTime()<endTime){
+            value++;
+        }
+    alert(startTime);
+    alert(endTime);
+    alert(value);
+         */
+        /*시작시간부터+1000 ~끝시간까지  얼마나걸리냐 실행횟수 계산*/
+         
+         
+         
+        /*do-while 반복문 */
+         var value =1;
+         do{
+             alert(value+'번째 반복.');
+             value++;
+         }while(value <= 5);
+         /* 3. for 반복문*/
+         var array =['포도','사과','바나나','망고'];
+         for(var i=0; i<array.length; i++){
+             alert(array[i]);
+         }
+         /*4.for in 반복문*/
+         var array =['포도','사과','바나나','망고'];
+         for(var a in array){
+             alert(array[a]);
+         }
+         /*자바의 향상 된 for 와 유사*/
+//         for(String a : array)alter(a);
+         
+         /*반복실행문 배열 switch 문을 이용해서 년월일을 입력받고 요일을 출력하는 코드 작성*/
+    </script>
+</head>
+<body>
+   
+</body>
+</html>

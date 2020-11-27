@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom 실습_Basic</title>
+    <style type="text/css">
+        
+    </style>
+    <script type="text/javascript">
+         function createE(){
+            //1.문서 객체 생성
+            var header = document.CreateElementById('h1');
+             
+            var textNode = document.createTextNode('change by DOM!!!');
+            //2. 노드(요소/텍스트)연결
+             
+            header.appendChild(textNode);
+            //3.body문서객체에 header 문서 객체를 추가.
+            document.body.appendChild(header);
+        }
+    </script>
+</head>
+<body>
+<h1 id = "header_1">Header-1</h1>
+<img src="images/Penguins.jpg" width="300">
+<div> <h1 id = "header_2" class="", name="">Header-2</h1></div>
+<h1 id="clock"></h1>
+<input type="button" value="제목변경" onclick="createE();"/>
+</body>
+</html>

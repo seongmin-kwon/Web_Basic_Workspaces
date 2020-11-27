@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+    <script type="text/javascript">
+     /*브라우저 객체 모델(BOM:Browser Object Model)*/
+    //웹 브라우저와 관련된 객체의 집합을 의미.
+    //브라우저의 활용 객체들 :window,screen,location,navigator,history,document등
+    
+    /*1.window 객체*/
+        //브라우저 기반 자바스크립트의 최상위 객체.
+        //alert(),prompt()함수의 모두 window객체의 메서드.
+        
+        //window 객체의 윈도우 생성 메서드.
+        //window.open(); 팝업창 생성
+        window.open('https:www.naver.com','child','width=600,height=480');
+        //'http"//www.naver.com' -팝업창에 표시할 페이지 또는 사이트 주소
+        //'child'-팝업창의 이름(name)
+        //window=600px,height=480 팝업의 속성들 가로세로 크기등등
+        //open 함수의 마지막 위치에 들어가는 팜업 창의 구성에 관련된 요소들 마지막요소는 ""또는''dksdp dufj dythfmf (,)컴마로 구분하여 설정하고자 하는 요소를 모두 넣습니다.
+        /* 대부분 사용안하고 위드 하이트 툴바 스테이터스 로케이션 정도만 사용한다고 보연된다.
+        width: 팝업창 가로길이
+        height:팜업창 세로길이
+        toolbar=no : 단축도구창(툴바)표시안함
+        menubar=no: 메뉴창 (메뉴바) 표시안함
+        location=no: 주소창 표시안함.
+        scrollbars=no:스크롤바 표시안함.
+        status=no: 아래 상태 바창 표시안함.
+        resizable=no:창변형 하지않음. (브라우저 마다 다름.. 잘안먹는다.)
+        fullscreen=no:창변형 하지않음.
+        channelmode=yes: F11키 기능이랑 같음.
+        left=0:왼쪽에 창을 고정(ex. left=30이런식으로 조절)
+        top=0:위쪽에 창을 고정(ex. top=100 이런식으로 조절)
+        */
+        /*이제 여러가지를적용해서 다시열어보자.*/
+       
+        
+         var child=window.open('https:www.naver.com','child','width=600,height=480,location=no,scrollbars=no,resizable=no,left=100,top=100');
+        
+        /*function abc(){
+            child.moveBy(100,100);
+        }*/
+        
+        setInterval(abc(),500);
+        
+        
+        
+        var output='';
+        for(var key in window){
+            output += '✎ '+key+':'+window[key]+"\n";
+            
+        }
+        alert(output);
+        //브라우저 크기를 화면에 일치하는 방법
+        //. 팝업창을 생성하고 전체 화면으로 만듦 이어 1초마다.
+        // 크기 변환하고 이동해 점점 가운데로 수렴.
+        
+        var child =window.open('','','width=300,height=200');
+        var width= screen.width;
+        var height= screen.height;
+        child.moveTo(0,0);
+        child.resizeTo(width,height);
+        
+        setInterval(function(){
+            child.resizeBy(-20,-20);
+            child.moveBy(10,10);
+        },1000);
+        //setinterval 사용 방법: 사용할 선언적 함수 호출또는 익명 함수,시간 간격,설정된 시간간격마다 앞에 기술된 함수의내용을 실행 . 1000이 1초 이다~
+        
+    </script>
+</head>
+<body>
+    <input type="button" onClick="abc();" value="이동">
+    
+</body>
+</html>

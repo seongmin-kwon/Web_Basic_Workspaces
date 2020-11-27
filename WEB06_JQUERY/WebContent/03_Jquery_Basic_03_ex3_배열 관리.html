@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <style type="text/css">
+		.boldFont { color: green; font-weight: bold; }
+	</style>
+    <script type="text/javascript">
+/*
+    <jQuery를 사용한 배열 관리(1) >
+ - each() 메서드 사용: for in 반복문 처럼 객테나 배열의 요소를 검사하는 메서드이다.
+ . 매개 변수로 입력한 함수 사용.
+ . for in 반복문처럼 객체나 배열의 요소 검사하는 메서드
+ - index: 사용된 배열의 index,key를 의미
+ - item: 해당 인덱스 , 키가 가진 값(value)을 의미
+
+
+ - each() 메서드의 형태
+ 1.선택자 없이 사용하여 배열을 매개변수로 넘김
+ $.each(배열의 이름,function(index,item){
+  //실행할 코드 입력
+ });
+ 
+ 2.선택자를 사용하여 생성된 배열 사용
+  $("선택자").each(function(index,item){
+  //실행할 코드 입력
+ });
+ 
+*/
+        
+        
+     $(function() {
+	$("button").on("click", function() {
+		$("li").each(function() {				// 선택한 <li>요소 집합의 각 <li>요소를 선택함.
+		$(this).toggleClass("boldFont");	// 각 <li>요소마다 클래스를 추가하거나 제거함.
+	});
+});
+});
+
+    </script>
+</head>
+<body>
+<h1>.each() 메소드</h1>
+	<ul>
+		<li>첫 번째 아이템이에요!</li>
+		<li>두 번째 아이템이에요!</li>
+		<li>세 번째 아이템이에요!</li>
+	</ul>
+	<button>클래스 추가 및 제거</button>	
+
+</body>
+</html>

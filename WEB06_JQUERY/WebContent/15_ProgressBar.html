@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>진행 바 만들기</title>
+	<style type="text/css">
+		.article_pro{width: 800px; border:1px dashed gray;}
+		.article_pro>dl>*{
+			line-height: 40px;
+			font-size:18px;
+			font-weight: bold;
+		}/*> 그아래*/
+		.article_pro>dt{
+			float:left;
+		}
+		.article_pro>dd{
+			float:right;
+		}
+		.article_pro>ul{
+			margin-top: 20px;
+			border-radius: 10px;
+			overflow: hidden;
+			background-color: #333;
+			list-style: none;
+			padding: 0px;
+		}
+		.article_pro>ul>li{
+			height: 20px;
+			background: #ff0000;
+			width: 0;
+			border:4px solid #333;
+			border-radius: 10px;
+		}
+		
+		
+		
+			
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		$(".article_pro").click(function(){
+			var k= $(".article_pro").index(this);
+			var num=$(this).find('span').text();
+			alert(num);
+			//find : 선택자 내부에 () 안에 명시한 태그를 검색하고 찾습니다.
+			$(".article_pro").eq(k).find('li').animate({width:num+'%'},2000);
+		});
+	});
+	</script>
+</head>
+<body>
+    <h2>CSS의 분야별 사용빈도 및 중요성</h2>
+    <article class="article_pro" id="n1">
+        <dl><!--제목-->
+            <dt>Selector의 중요도</dt><!--들여쓰기-->
+            <dd><span>75</span>%</dd>
+        </dl>
+        <br>
+        <ul>
+            <li></li>
+        </ul>        
+    </article>
+    <article class="article_pro" id="n2">
+        <dl><!--제목-->
+            <dt>Property의 사용빈도</dt><!--들여쓰기-->
+            <dd><span>25</span>%</dd>
+        </dl>
+        <br>
+        <ul>
+            <li></li>
+        </ul>        
+    </article>
+    <article class="article_pro" id="n3">
+        <dl><!--제목-->
+            <dt>CSS 애니메이션의 구사능력</dt><!--들여쓰기-->
+            <dd><span>33</span>%</dd>
+        </dl>
+        <br>
+        <ul>
+            <li></li>
+        </ul>        
+    </article>
+    <article class="article_pro" id="n4">
+        <dl><!--제목-->
+            <dt>화면분할의 적절성</dt><!--들여쓰기-->
+            <dd><span>95</span>%</dd>
+        </dl>
+        <br>
+        <ul>
+            <li></li>
+        </ul>        
+    </article>
+
+</body>
+</html>

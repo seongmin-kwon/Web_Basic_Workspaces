@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date객체</title>
+    <script type="text/javascript">
+    /*Date 객체*/
+    /*
+    -getFullYear() -연도정보를 반환
+    -getMonth() :월 정보를 반환(0~11)
+    -getDate() :일 정보를 반환
+    -getDay
+    -getHour
+    -getMinutes()
+    -getSecond()
+    -getMillisecond()
+    -getTime()
+    -toGMTString()
+    
+    
+    -setFullYear()
+    -setMonth()
+    -setDate()
+    -setHour()
+    -setMinutes()
+    -setSecond()
+    -setMillisecond()
+    -setTime()
+    -toLocalString()
+    
+    
+    */
+    var today = new Date();
+    var nowMonth = today.getMonth();
+    var nowDate = today.getDate();
+    var nowDay = today.getDay();
+    document.write("<h1>오늘 날짜 정보</h1>");
+    document.write("현재 월 : " + nowMonth,"<br>");
+    document.write("현재 일 : " + nowDate,"<br>");
+    document.write("현재 요일 : " + nowDay,"<br>");
+    
+    
+    var worldcup = new Date(2022, 6, 30);
+    var theMonth = worldcup.getMonth();
+    var theDate = worldcup.getDate();
+    var theDay = worldcup.getDay();
+    document.write("<h1>월드컵 날짜 정보</h1>");
+    document.write("2022월드컵 몇 월 : " + theMonth,"<br>");
+    document.write("2022월드컵 몇 일 : " + theDate,"<br>");
+    document.write("2022월드컵 무슨 요일 : " + theDay,"<br>");
+        
+    var NowYear = today.getFullYear();
+    the Date= now Datat(nowYear, 11,30);
+    var diffDate =theDate.gwtTime() - today.getTime();
+    var diffDate = theDate.getTime()-today.getTime();
+        
+    var result =Math.ceil(diffDate/(60*1000*60*24));
+    //밀리초 /1000 
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

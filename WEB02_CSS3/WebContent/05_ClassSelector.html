@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--  
+# 클래스 선택자 #
+- 특정한 클래스를 가지고 있는태그를 선택할때 사용하는 선택자.
+- 웹페이지를 개발할때 많이 사용되는 선택자.
+- 특히 주로 여러 개의 클래스 선택자 사용 하여 같은 css 줄때 사용
+- class속성은 공백으로 구분해서 여러 클래스를 사용할 수 있다.
+- id속성(유일하게 사용하는것이 관례)은 웹페이지내부에서 중복되지 않으므로 상관없지만 class 속성은 중복될수있습니다.
+- class속성은 서로 다른 태그에 적용된다면 태그선택자와 클래스 선택자를 함께 사용해 더정확하게 태그를 선택할 수있습니다.
+- id: # , class:. 으로 접근한다.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.select{color:red;}
+.item{background:yellow;}
+</style>
+</head>
+<body>
+<h1 class="select">웹프로그래밍</h1>
+<ul class="select">
+	<li class="item">html</li>
+	<li class ="item">css</li>
+	<li>Jquery</li>
+</ul>
+<hr>
+<h1 class ="item select">화면구현</h1>
+</body>
+</html>

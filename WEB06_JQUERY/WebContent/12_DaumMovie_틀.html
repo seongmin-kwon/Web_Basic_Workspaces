@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>12_DaumMovie.html</title>
+
+<style type="text/css">
+
+    body{margin:0px; overflow-x: hidden;}
+
+    
+
+    #base{position:relative; width:100%; height:360px; background:#292929; margin-top:50px;padding-top:20px}
+
+    
+
+    #all-view{position:relative; width:1215px; height:340px; border:1px dashed green; margin:0 auto;}
+
+    
+
+    #view{position:relative; width:1100px; height:340px; border:1px dashed white; margin:0 auto; float:left;}
+
+    
+
+    #movies{position:absolute; left:0; top:0; width:3700px; height:340px; border:1px solid red;}
+
+    
+
+    .movie{position:relative; float:left; width:178px; height:340px; margin-right:5px; border:1px solid yellow;}
+
+    
+
+    #lbtn{position:relative; width:55px; height:55px; margin-top:140px; background-image:url(images/ico_movie_171115.png); background-position:0 -180px; float:left;}
+
+    
+
+    #rbtn{position:relative; width:55px; height:55px; margin-top:140px; background-image:url(images/ico_movie_171115.png); background-position:-60px -180px; float:left;}
+
+</style>
+
+<script src="js/jquery-3.5.1.js"></script>
+
+<script type="text/javascript">
+
+    var s1 = ''
+
+    for(var i=0; i<=19; i++){
+
+        s1 += '<div class="movie"></div>'
+
+    }
+
+    $(function(){ 
+
+        $(s1).appendTo('#movies'); 
+
+    });
+
+</script>
+
+</head>
+
+<body>
+
+<div id="base">
+    <div id="all-view">
+    <div id="lbtn"></div>
+        <div id="view">
+            <div id="movies"></div>
+        </div>
+    <div id="rbtn"></div>
+    </div>
+</div>
+</body>
+</html>
+
+    <li><img src="images/dm1.png"></li>
+    <li><img src="images/dm2.png"></li>
+    <li><img src="images/dm3.png"></li>
+    <li><img src="images/dm4.png"></li>
+    <li><img src="images/dm5.png"></li>
+    <li><img src="images/dm6.png"></li>
+    <li><img src="images/dm7.png"></li>
+    <li><img src="images/dm8.png"></li>
+    <li><img src="images/dm9.png"></li>
+    <li><img src="images/dm10.png"></li>
+    <li><img src="images/dm11.png"></li>
+    <li><img src="images/dm12.png"></li>
+    <li><img src="images/dm13.png"></li>
+    <li><img src="images/dm14.png"></li>
+    <li><img src="images/dm15.png"></li>
+    <li><img src="images/dm16.png"></li>
+    <li><img src="images/dm17.png"></li>
+    <li><img src="images/dm18.png"></li>
+    <li><img src="images/dm19.png"></li>
+    <li><img src="images/dm20.png"></li>

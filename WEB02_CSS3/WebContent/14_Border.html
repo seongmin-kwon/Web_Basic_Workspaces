@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--보더는 외각선으로 테이블에서봤지만 사실 어디에나 들어갈 수 있다.-->
+<!--
+-- 박스속성
+1. border-width속성
+- 테두리의 너비를 지정하는 스타일 속성.
+ -크기단위:border-left[top/right/bottom]-width
+- 키워드:medium/thick/thin...
+2. border- style속성
+-테두리의 형태를 지정하는 스타일 속성.
+-border-left[top/right/bottom]-style
+3. border-color속성
+-border-left[top/right/bottom]-color
+4. border-radius 속성
+-CSS3에서 추가된 속성
+-테두리가 둥근 사각형 또는 원을 만들 수 있다.
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box01{
+            width:500px;
+            height=80px;
+            border-left:red;
+            border-right:pink;
+            border-top:black;
+            border-bottom:yellow;
+            
+            border-left-width: thin;
+            border-right-width: 8px;
+            border-top-width: thick;
+            border-bottom-width: 20px;
+            
+            border-left-style: solid; /*그냥 실선*/
+            border-right-style: double; /*이중선*/
+            border-top-style: dotted;
+            border-bottom: dashed;
+            
+        }
+            .box02{
+                width:400px;
+                height=400px;
+                border:5px solid blue;
+                border-radius: 40px 40px 40px 40px;
+                
+                /*->(같다)border-radius: 15%; 단 이렇게 쓸때는 가로세로 같을때*/
+                /*보더에의한 선굵기는div또는 박스 모델의 전체 크기에 합산되어 관여합니다.*/
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box01"><h1>테스트 01</h1></div>
+    <div class="box02"><h1>테스트 02</h1></div>
+</body>
+</html>

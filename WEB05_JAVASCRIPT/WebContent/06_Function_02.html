@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script type="text/javascript">
+/*함수의 개요*/
+    /*
+    1. 함수의 개요  -> 자바의 주로 스테틱 메서드와 같다.
+    -익명함수:이름을 가지고 있지않은 함수. 함수의 몸체를 변수에 넣어서
+    -선언적 함쉬 이름을 가지고 잇는 함수.
+    -익명함수는 하나의 변수에 서로 다은 익명함수를 대입하고 필요할때 마다. 필요한 함수를 실행할 수 있다는 장점이있습니다.
+    */
+    
+    var func = function(){
+        var output = Number(prompt('숫자를 입력하세요','숫자'));
+        alert(output);
+    }
+    func();//익명함수의 호출방법
+     var func = function(){
+        var output = prompt('문자를 입력하세요','문자');
+        alert(output);
+    }
+    func();
+    alert(func); //함수의 몸체 출력
+    
+    /*
+    
+    -함수의 정의 영역 및 몸체를 변수에 저장하여 변수의 이름으로 호출하는 형태
+    -변수의 이름으로 함수를 호출할시 형재 저장되어있는 함수가 실행됨.
+    -함수는 정의 되어있는 내용을 이름 또는 변수로 호출 하여 실행 하기 위한 단위코드로
+    head영역의 script태그 안에서 또는 body 영역의 script태그 안에서 어디서든 호출 할 수있다.
+    -<body onLoad="func();">
+    -또한 input 태그의 이벤트 속성에서도 호출 가능하다.
+    -<input type ="button" onClick="func();">
+    */
+    
+    
+    /*선언적 함수의 정의*/
+    function move(){
+        alert('move()함수 호출.');
+        
+    }
+    /*
+    head영역의 script 태그 안에서 또는 body영역의 script 태그안에서 어디서든 호출할 수있다.
+    <body onLoad="move();">
+    또한 input 태그의 이벤트 속성에서도 호출 가능하다.
+    <input type="button" onClick="move();>
+    */
+        
+var result= add(2,3);
+    document.write("2+3=" +result+'<br>');
+    result = add("java","script");
+    document.write("결과="+result);
+</script>
+</head>
+<body>
+    
+</body>
+</html>

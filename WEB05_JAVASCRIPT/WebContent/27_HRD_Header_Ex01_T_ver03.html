@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>27_Hrd_Ex.html</title>
+<style type="text/css">
+    #layer1{position:relative; width:100%; height:145px; border:1px dashed gray;}
+    .view1{position:relative; width:1025px; height:115px; border:1px solid red; margin:0 auto; overflow: hidden;}
+    .view2{position:relative; width:1025px; height:30px; border:1px dotted blue; margin:0 auto;}
+    #imgs{position:absolute; width:9225px;height:115px; border:1px solid blue; top:0px; left:0px; transition:0.5s;}
+    body{overflow-x:hidden;}
+   
+    .remote{position:relative; width:240px; height:20px; border:1px dotted blue; float:right; margin-top:4px;}
+   
+    .btns{position:relative; width:18px; height:18px; border:1px solid black; float:left; font-size:90%; font-weight:bold; line-height:18px; text-align:center;}
+   
+    .btns:hover{ cursor:default; }
+</style>
+<script type="text/javascript">
+    var tag = ''
+    var banners = ['images/H1.png', 'images/H2.png', 'images/H3.png', 'images/H4.png', 'images/H5.png', 'images/H6.png', 'images/H7.png', 'images/H8.png', 'images/H9.png'];
+   
+    tag += '<div id="imgs">'
+    for(var i=0; i<=8; i++)
+        tag += '<img src="' + banners[i] + '">'
+    tag += '</div>';
+   
+   
+   
+   
+    var statusAuto = "off";
+    function AutoOnOff(){
+        if( statusAuto == "off" ){
+            statusAuto = "on";
+            timer = window.setInterval("move()", 1000);
+            document.getElementById("btnA").innerHTML = '■';
+        }else{
+            statusAuto = "off";
+            window.clearInterval(timer);
+            document.getElementById("btnA").innerHTML = '▶';
+        }
+    }
+    var num=0;
+    function move(){
+        num++;
+        if(num>8)num=0;
+        var k = num*1025*(-1);
+        document.getElementById("imgs").style.left = k +'px';
+        changColor();
+    }
+   
+    function movebtn(n){
+        if( statusAuto == "on") return;
+        num = n-1;
+        var k = num*1025*(-1);
+        document.getElementById("imgs").style.left = k +'px';
+        changColor();
+    }
+   
+    function moveLeft(){
+        if( statusAuto == "on") return;
+        num--;
+        if(num<0)num=0;
+        var k = num*1025*(-1);
+        document.getElementById("imgs").style.left = k +'px';
+        changColor();
+    }
+    function moveRight(){
+        if( statusAuto == "on") return;
+        num++;
+        if(num>8)num=8;
+        var k = num*1025*(-1);
+        document.getElementById("imgs").style.left = k +'px';
+        changColor();
+    }
+   
+    function changColor(){
+        for(var i=1; i<=9; i++){
+            document.getElementById("btn" + i).style.background='white';
+            document.getElementById("btn" + i).style.color='black';
+        }
+        document.getElementById("btn"+(num+1)).style.background='black';
+        document.getElementById("btn"+(num+1)).style.color='white';
+    }
+</script>
+</head>
+<body>
+<div id="layer1">
+    <div class="view1">
+        <script type="text/javascript">
+   document.write(tag);
+  </script>
+    </div>
+    <div class="view2">
+        <div class="remote">
+   <div class="btns"  id="btnL" onClick="moveLeft();">◁</div>
+   <div class="btns"  id="btn1" onClick="movebtn(1);">1</div>
+   <div class="btns"  id="btn2" onClick="movebtn(2);">2</div>
+   <div class="btns"  id="btn3" onClick="movebtn(3);">3</div>
+   <div class="btns"  id="btn4" onClick="movebtn(4);">4</div>
+   <div class="btns"  id="btn5" onClick="movebtn(5);">5</div>
+   <div class="btns"  id="btn6" onClick="movebtn(6);">6</div>
+   <div class="btns"  id="btn7" onClick="movebtn(7);">7</div>
+   <div class="btns"  id="btn8" onClick="movebtn(8);">8</div>
+   <div class="btns"  id="btn9" onClick="movebtn(9);">9</div>
+   <div class="btns"  id="btnR" onClick="moveRight();">▷</div>
+   <div class="btns"  id="btnA" onClick="AutoOnOff();">▶</div>
+  </div>
+    </div>
+</div>  
+</body>
+</html>
