@@ -17,4 +17,5 @@
 
 ![03](https://user-images.githubusercontent.com/65941320/100404378-935c4680-30a4-11eb-8bbf-ba6589e6387f.png)
 
-![bandicam 2020-11-27 11-33-58-077](https://user-images.githubusercontent.com/65941320/100404666-45940e00-30a5-11eb-8fd9-81fc41dcd5f1.gif)
+![bandicam 2020-11-27 11-33-58-077 mp4_000005833](https://user-images.githubusercontent.com/65941320/100404718-6b211780-30a5-11eb-83dc-4d60e7e2f1d3.png)
+
